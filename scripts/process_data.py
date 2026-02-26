@@ -225,11 +225,15 @@ def main():
                 pcard = commander_card_info.get(pname, {})
                 psid = pcard.get("scryfall_id", "")
                 pair_key = make_pair_id(cmdr_name, pname)
+                combined_colors = sorted(set(
+                    card.get("color_identity", []) + pcard.get("color_identity", [])
+                ))
                 partners.append({
                     "name": pname,
                     "id": slugify(pname),
                     "image_uri": scryfall_image(psid),
                     "deck_count": len(pair_decks.get(pair_key, [])),
+                    "color_identity": combined_colors,
                 })
             partners.sort(key=lambda x: -x["deck_count"])
 
