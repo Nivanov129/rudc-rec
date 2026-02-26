@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@theme {
+  --color-mana-w: #F9FAF4;
+  --color-mana-u: #0E68AB;
+  --color-mana-b: #150B00;
+  --color-mana-r: #D3202A;
+  --color-mana-g: #00733E;
+  --color-gold: #D4A017;
+}
+
+body {
+  font-family: Inter, system-ui, -apple-system, sans-serif;
+}
+
+.card-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card-hover:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+}

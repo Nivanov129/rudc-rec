@@ -1,0 +1,31 @@
+---
+import '../styles/global.css';
+interface Props { title: string; }
+const { title } = Astro.props;
+---
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title} | RUDC REC</title>
+  <link rel="preconnect" href="https://cards.scryfall.io" />
+</head>
+<body class="bg-gray-950 text-gray-100 min-h-screen">
+  <nav class="bg-gray-900 border-b border-gray-800 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center gap-6">
+      <a href="/" class="text-xl font-bold text-amber-400 hover:text-amber-300">RUDC REC</a>
+      <div class="flex gap-4 text-sm">
+        <a href="/commanders" class="text-gray-300 hover:text-amber-400">Коммандеры</a>
+        <a href="/banlist" class="text-gray-300 hover:text-amber-400">Бан-лист</a>
+        <a href="/rules" class="text-gray-300 hover:text-amber-400">Правила</a>
+      </div>
+    </div>
+  </nav>
+  <main class="max-w-7xl mx-auto px-4 py-8">
+    <slot />
+  </main>
+  <footer class="border-t border-gray-800 mt-16 py-6 text-center text-gray-500 text-sm">
+    RUDC REC — Статистика Russian Duel Commander
+  </footer>
+</body>
+</html>

@@ -1,0 +1,18 @@
+---
+interface Props { colors: string[]; size?: string; }
+const { colors, size = 'w-4 h-4' } = Astro.props;
+const colorMap: Record<string, { bg: string; label: string }> = {
+  W: { bg: 'bg-[#F9FAF4]', label: 'W' },
+  U: { bg: 'bg-[#0E68AB]', label: 'U' },
+  B: { bg: 'bg-[#150B00] border border-gray-600', label: 'B' },
+  R: { bg: 'bg-[#D3202A]', label: 'R' },
+  G: { bg: 'bg-[#00733E]', label: 'G' },
+};
+---
+<div class="flex gap-0.5">
+  {colors.map(c => {
+    const info = colorMap[c];
+    return info ? <span class={`${size} rounded-full inline-block ${info.bg}`} title={info.label}></span> : null;
+  })}
+  {colors.length === 0 && <span class="w-4 h-4 rounded-full inline-block bg-gray-500" title="C"></span>}
+</div>

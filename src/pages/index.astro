@@ -1,0 +1,46 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CommanderCard from '../components/CommanderCard.astro';
+import meta from '../data/meta.json';
+---
+<Layout title="Главная">
+  <div class="text-center mb-12">
+    <h1 class="text-5xl font-bold text-amber-400 mb-2">RUDC REC</h1>
+    <p class="text-xl text-gray-400">Статистика Russian Duel Commander</p>
+  </div>
+
+  <div class="grid grid-cols-3 gap-4 max-w-2xl mx-auto mb-12">
+    <div class="bg-gray-900 rounded-lg p-4 text-center">
+      <div class="text-3xl font-bold text-amber-400">{meta.total_decks}</div>
+      <div class="text-gray-400 text-sm">Деков</div>
+    </div>
+    <div class="bg-gray-900 rounded-lg p-4 text-center">
+      <div class="text-3xl font-bold text-amber-400">{meta.total_commanders}</div>
+      <div class="text-gray-400 text-sm">Коммандеров</div>
+    </div>
+    <div class="bg-gray-900 rounded-lg p-4 text-center">
+      <div class="text-3xl font-bold text-amber-400">{meta.total_unique_cards}</div>
+      <div class="text-gray-400 text-sm">Уникальных карт</div>
+    </div>
+  </div>
+
+  <h2 class="text-2xl font-bold text-amber-400 mb-6">Топ-20 коммандеров</h2>
+  <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mb-8">
+    {meta.top_20_recent.map((c: any) => (
+      <CommanderCard
+        id={c.id}
+        name={c.name}
+        image_uri={c.image_uri}
+        deck_count={c.deck_count}
+        color_identity={c.color_identity}
+        is_banned={c.is_banned}
+      />
+    ))}
+  </div>
+
+  <div class="text-center">
+    <a href="/commanders" class="inline-block bg-amber-600 hover:bg-amber-500 text-white font-bold py-2 px-6 rounded-lg transition">
+      Все коммандеры →
+    </a>
+  </div>
+</Layout>

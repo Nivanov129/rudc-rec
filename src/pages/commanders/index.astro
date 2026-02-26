@@ -1,0 +1,177 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ColorIcons from '../../components/ColorIcons.astro';
+import commanders from '../../data/commanders.json';
+
+const sorted = [...commanders].sort((a: any, b: any) => b.deck_count - a.deck_count);
+const colorButtons = [
+  { c: 'W', hex: '#F9FAF4' },
+  { c: 'U', hex: '#0E68AB' },
+  { c: 'B', hex: '#555555' },
+  { c: 'R', hex: '#D3202A' },
+  { c: 'G', hex: '#00733E' },
+];
+const periods = [
+  { key: 'all', label: 'Всё время', field: 'deck_count' },
+  { key: '180d', label: '6 месяцев', field: 'deck_count_180d' },
+  { key: '90d', label: '90 дней', field: 'deck_count_90d' },
+  { key: '30d', label: '30 дней', field: 'deck_count_30d' },
+];
+---
+<Layout title="Все коммандеры">
+  <h1 class="text-3xl font-bold text-amber-400 mb-6">Все коммандеры ({commanders.length})</h1>
+
+  <!-- Period selector -->
+  <div class="flex flex-wrap gap-2 mb-4 items-center">
+    <span class="text-gray-400 text-sm mr-2">Период:</span>
+    {periods.map(({ key, label }) => (
+      <button
+        data-period={key}
+        class:list={[
+          'period-btn text-xs px-3 py-1.5 rounded-lg transition font-medium',
+          key === 'all' ? 'bg-amber-600 text-white' : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
+        ]}
+      >{label}</button>
+    ))}
+  </div>
+
+  <!-- Color filters + sort -->
+  <div class="flex flex-wrap gap-2 mb-4 items-center">
+    <span class="text-gray-400 text-sm mr-2">Цвета:</span>
+    {colorButtons.map(({ c, hex }) => (
+      <button
+        data-color={c}
+        class="color-filter w-8 h-8 rounded-full border-2 border-transparent hover:border-amber-400 transition"
+        style={`background-color: ${hex}`}
+        title={c}
+      ></button>
+    ))}
+    <button id="clear-filters" class="text-xs text-gray-400 hover:text-amber-400 ml-2">Сброс</button>
+    <div class="ml-auto flex gap-2">
+      <button id="sort-pop" class="text-xs bg-amber-600 text-white px-3 py-1 rounded">По популярности</button>
+      <button id="sort-name" class="text-xs bg-gray-700 text-white px-3 py-1 rounded hover:bg-gray-600">По имени</button>
+    </div>
+  </div>
+
+  <div id="commanders-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+    {sorted.map((c: any) => (
+      <div
+        class="commander-item"
+        data-colors={c.color_identity.join(',')}
+        data-name={c.name}
+        data-decks={c.deck_count}
+        data-decks-180d={c.deck_count_180d || 0}
+        data-decks-90d={c.deck_count_90d || 0}
+        data-decks-30d={c.deck_count_30d || 0}
+      >
+        <a href={`/commanders/${c.id}`} class="block relative card-hover rounded-lg overflow-hidden bg-gray-900">
+          {c.is_banned && <span class="absolute top-1 right-1 z-10 text-lg" title="Забанен">🚫</span>}
+          <img src={c.image_uri} alt={c.name} class="w-full rounded-t-lg" loading="lazy"
+            onerror="this.style.display='none'" />
+          <div class="p-2">
+            <div class="text-sm font-medium text-gray-100 truncate">{c.name}</div>
+            <div class="flex items-center justify-between mt-1">
+              <ColorIcons colors={c.color_identity} />
+              <span class="deck-count text-xs text-gray-400">{c.deck_count} деков</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    ))}
+  </div>
+
+  <script>
+    let currentPeriod = 'all';
+    const filters = new Set<string>();
+
+    function getDeckField(period: string): string {
+      if (period === '30d') return 'decks30d';
+      if (period === '90d') return 'decks90d';
+      if (period === '180d') return 'decks180d';
+      return 'decks';
+    }
+
+    function getDecks(el: HTMLElement, period: string): number {
+      if (period === '30d') return Number(el.getAttribute('data-decks-30d')) || 0;
+      if (period === '90d') return Number(el.getAttribute('data-decks-90d')) || 0;
+      if (period === '180d') return Number(el.getAttribute('data-decks-180d')) || 0;
+      return Number(el.getAttribute('data-decks')) || 0;
+    }
+
+    function updateDisplay() {
+      const items = document.querySelectorAll('.commander-item') as NodeListOf<HTMLElement>;
+      items.forEach(el => {
+        const colors = el.dataset.colors!.split(',').filter(Boolean);
+        const colorMatch = filters.size === 0 || [...filters].every(f => colors.includes(f));
+        const deckCount = getDecks(el, currentPeriod);
+        const periodMatch = currentPeriod === 'all' || deckCount > 0;
+
+        el.style.display = (colorMatch && periodMatch) ? '' : 'none';
+
+        // Update deck count label
+        const label = el.querySelector('.deck-count') as HTMLElement;
+        if (label) {
+          const suffix = deckCount === 1 ? 'дек' : (deckCount >= 2 && deckCount <= 4) ? 'дека' : 'деков';
+          label.textContent = `${deckCount} ${suffix}`;
+        }
+      });
+    }
+
+    function sortByPopularity() {
+      const grid = document.getElementById('commanders-grid')!;
+      const items = [...grid.querySelectorAll('.commander-item')] as HTMLElement[];
+      items.sort((a, b) => getDecks(b, currentPeriod) - getDecks(a, currentPeriod));
+      items.forEach(item => grid.appendChild(item));
+    }
+
+    // Period buttons
+    document.querySelectorAll('.period-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        currentPeriod = (btn as HTMLElement).dataset.period!;
+        document.querySelectorAll('.period-btn').forEach(b => {
+          b.className = 'period-btn text-xs px-3 py-1.5 rounded-lg transition font-medium bg-gray-800 text-gray-300 hover:bg-gray-700';
+        });
+        (btn as HTMLElement).className = 'period-btn text-xs px-3 py-1.5 rounded-lg transition font-medium bg-amber-600 text-white';
+        sortByPopularity();
+        updateDisplay();
+      });
+    });
+
+    // Color filters
+    document.querySelectorAll('.color-filter').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const c = (btn as HTMLElement).dataset.color!;
+        if (filters.has(c)) {
+          filters.delete(c);
+          (btn as HTMLElement).style.borderColor = 'transparent';
+        } else {
+          filters.add(c);
+          (btn as HTMLElement).style.borderColor = '#D4A017';
+        }
+        updateDisplay();
+      });
+    });
+
+    document.getElementById('clear-filters')?.addEventListener('click', () => {
+      filters.clear();
+      document.querySelectorAll('.color-filter').forEach(b => (b as HTMLElement).style.borderColor = 'transparent');
+      updateDisplay();
+    });
+
+    // Sort buttons
+    document.getElementById('sort-pop')?.addEventListener('click', () => {
+      sortByPopularity();
+      document.getElementById('sort-pop')!.className = 'text-xs bg-amber-600 text-white px-3 py-1 rounded';
+      document.getElementById('sort-name')!.className = 'text-xs bg-gray-700 text-white px-3 py-1 rounded hover:bg-gray-600';
+    });
+
+    document.getElementById('sort-name')?.addEventListener('click', () => {
+      const grid = document.getElementById('commanders-grid')!;
+      const items = [...grid.querySelectorAll('.commander-item')] as HTMLElement[];
+      items.sort((a, b) => a.dataset.name!.localeCompare(b.dataset.name!));
+      items.forEach(item => grid.appendChild(item));
+      document.getElementById('sort-name')!.className = 'text-xs bg-amber-600 text-white px-3 py-1 rounded';
+      document.getElementById('sort-pop')!.className = 'text-xs bg-gray-700 text-white px-3 py-1 rounded hover:bg-gray-600';
+    });
+  </script>
+</Layout>

@@ -1,0 +1,27 @@
+---
+import Layout from '../layouts/Layout.astro';
+import banlist from '../data/banlist.json';
+---
+<Layout title="Бан-лист">
+  <h1 class="text-3xl font-bold text-amber-400 mb-8">Бан-лист</h1>
+
+  <h2 class="text-xl font-bold text-red-400 mb-4">🚫 Забанены как коммандер ({banlist.banned_as_commander.length})</h2>
+  <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mb-12">
+    {banlist.banned_as_commander.map((card: any) => (
+      <a href={`https://scryfall.com/card/${card.scryfall_id}`} target="_blank" class="card-hover rounded-lg overflow-hidden bg-gray-900 block">
+        {card.image_uri && <img src={card.image_uri} alt={card.name} class="w-full" loading="lazy" />}
+        <div class="p-2 text-sm text-center truncate">{card.name}</div>
+      </a>
+    ))}
+  </div>
+
+  <h2 class="text-xl font-bold text-red-400 mb-4">🚫 Забанены в деке ({banlist.banned_in_deck.length})</h2>
+  <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+    {banlist.banned_in_deck.map((card: any) => (
+      <a href={`https://scryfall.com/card/${card.scryfall_id}`} target="_blank" class="card-hover rounded-lg overflow-hidden bg-gray-900 block">
+        {card.image_uri && <img src={card.image_uri} alt={card.name} class="w-full" loading="lazy" />}
+        <div class="p-2 text-sm text-center truncate">{card.name}</div>
+      </a>
+    ))}
+  </div>
+</Layout>

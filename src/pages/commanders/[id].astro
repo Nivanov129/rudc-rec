@@ -1,0 +1,144 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ColorIcons from '../../components/ColorIcons.astro';
+import fs from 'node:fs';
+import path from 'node:path';
+import commandersList from '../../data/commanders.json';
+
+export function getStaticPaths() {
+  return commandersList.map((c: any) => ({ params: { id: c.id } }));
+}
+
+const { id } = Astro.params;
+const dataPath = path.join(process.cwd(), 'src', 'data', 'commanders', `${id}.json`);
+const data = JSON.parse(fs.readFileSync(dataPath, 'utf-8'));
+const { commander, top_cards, decks } = data;
+
+const categories = [
+  { key: 'creatures', label: 'Существа' },
+  { key: 'instants', label: 'Мгновенные' },
+  { key: 'sorceries', label: 'Волшебства' },
+  { key: 'artifacts', label: 'Артефакты' },
+  { key: 'enchantments', label: 'Чары' },
+  { key: 'planeswalkers', label: 'Planeswalkers' },
+  { key: 'lands', label: 'Земли' },
+];
+---
+<Layout title={commander.name}>
+  <div class="flex flex-col md:flex-row gap-8 mb-10">
+    <div class="w-full md:w-80 shrink-0">
+      {commander.image_uri && (
+        <img src={commander.image_uri} alt={commander.name} class="w-full rounded-xl shadow-2xl" />
+      )}
+    </div>
+    <div>
+      <h1 class="text-3xl font-bold text-amber-400 mb-2">{commander.name}</h1>
+      {commander.is_banned && <span class="text-red-400 font-bold">🚫 Забанен как коммандер</span>}
+      <p class="text-gray-400 mb-4">{commander.type_line}</p>
+      <div class="flex items-center gap-4 mb-4">
+        <ColorIcons colors={commander.color_identity} size="w-6 h-6" />
+        {commander.mana_cost && <span class="text-gray-400">{commander.mana_cost}</span>}
+      </div>
+      <div class="grid grid-cols-3 gap-3">
+        <div class="bg-gray-900 rounded p-3 text-center">
+          <div class="text-2xl font-bold text-amber-400">{commander.deck_count}</div>
+          <div class="text-xs text-gray-400">Всего деков</div>
+        </div>
+        <div class="bg-gray-900 rounded p-3 text-center">
+          <div class="text-2xl font-bold text-amber-400">{commander.deck_count_90d ?? '—'}</div>
+          <div class="text-xs text-gray-400">За 90 дней</div>
+        </div>
+        <div class="bg-gray-900 rounded p-3 text-center">
+          <div class="text-2xl font-bold text-amber-400">{commander.deck_count_30d ?? '—'}</div>
+          <div class="text-xs text-gray-400">За 30 дней</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Category tabs -->
+  <div class="mb-8">
+    <div class="flex flex-wrap gap-2 mb-6 border-b border-gray-800 pb-3">
+      {categories.map((cat, i) => {
+        const cards = (top_cards as any)?.[cat.key];
+        if (!cards || cards.length === 0) return null;
+        return (
+          <button
+            data-tab={cat.key}
+            class={`tab-btn px-4 py-2 rounded-t text-sm font-medium transition ${i === 0 ? 'bg-amber-600 text-white' : 'bg-gray-800 text-gray-400 hover:text-white'}`}
+          >
+            {cat.label} ({cards.length})
+          </button>
+        );
+      })}
+    </div>
+
+    {categories.map((cat, i) => {
+      const cards = (top_cards as any)?.[cat.key];
+      if (!cards || cards.length === 0) return null;
+      return (
+        <div data-panel={cat.key} class={`tab-panel ${i === 0 ? '' : 'hidden'}`}>
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3">
+            {cards.slice(0, 30).map((card: any) => (
+              <div class="card-hover rounded-lg overflow-hidden bg-gray-900">
+                {card.image_uri && (
+                  <img src={card.image_uri} alt={card.name} class="w-full" loading="lazy" onerror="this.style.display='none'" />
+                )}
+                <div class="p-2">
+                  <div class="text-xs font-medium truncate">{card.name}</div>
+                  <div class="flex justify-between text-xs text-gray-400 mt-1">
+                    <span>{card.inclusion_pct}%</span>
+                    <span class="text-green-400">+{card.synergy}%</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      );
+    })}
+  </div>
+
+  <!-- Decklists -->
+  {decks && decks.length > 0 && (
+    <div>
+      <h2 class="text-2xl font-bold text-amber-400 mb-4">Деклисты ({decks.length})</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead class="text-gray-400 border-b border-gray-800">
+            <tr>
+              <th class="text-left py-2 px-2">Дек</th>
+              <th class="text-left py-2 px-2">Автор</th>
+              <th class="text-left py-2 px-2">Дата</th>
+              <th class="text-left py-2 px-2">Ссылка</th>
+            </tr>
+          </thead>
+          <tbody>
+            {decks.map((d: any) => (
+              <tr class="border-b border-gray-800/50 hover:bg-gray-900">
+                <td class="py-2 px-2">{d.name || 'Без названия'}</td>
+                <td class="py-2 px-2 text-gray-400">{d.author || '—'}</td>
+                <td class="py-2 px-2 text-gray-400">{d.date || '—'}</td>
+                <td class="py-2 px-2">
+                  {d.url && <a href={d.url} target="_blank" class="text-amber-400 hover:text-amber-300">Moxfield ↗</a>}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  )}
+
+  <script>
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const key = (btn as HTMLElement).dataset.tab!;
+        document.querySelectorAll('.tab-btn').forEach(b => b.className = 'tab-btn px-4 py-2 rounded-t text-sm font-medium transition bg-gray-800 text-gray-400 hover:text-white');
+        btn.className = 'tab-btn px-4 py-2 rounded-t text-sm font-medium transition bg-amber-600 text-white';
+        document.querySelectorAll('.tab-panel').forEach(p => (p as HTMLElement).classList.add('hidden'));
+        document.querySelector(`[data-panel="${key}"]`)?.classList.remove('hidden');
+      });
+    });
+  </script>
+</Layout>

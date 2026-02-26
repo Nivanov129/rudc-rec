@@ -1,0 +1,394 @@
+{
+  "total_decks": 1479,
+  "total_commanders": 396,
+  "total_unique_cards": 8017,
+  "last_updated": "2026-02-26",
+  "color_distribution": {
+    "G": 552,
+    "R": 718,
+    "U": 762,
+    "W": 697,
+    "B": 645
+  },
+  "top_20_recent": [
+    {
+      "id": "kefka-court-mage",
+      "name": "Kefka, Court Mage // Kefka, Ruler of Ruin",
+      "scryfall_id": "8fcf3fbb-1ddd-437e-81c1-f5a3133f5ee8",
+      "image_uri": "https://cards.scryfall.io/normal/front/8/f/8fcf3fbb-1ddd-437e-81c1-f5a3133f5ee8.jpg",
+      "color_identity": [
+        "B",
+        "R",
+        "U"
+      ],
+      "type_line": "Legendary Creature — Human Wizard // Legendary Creature — Avatar Wizard",
+      "mana_cost": "",
+      "cmc": 5.0,
+      "deck_count": 11,
+      "deck_count_90d": 5,
+      "deck_count_30d": 2,
+      "is_banned": false,
+      "banned_type": null,
+      "deck_count_180d": 9
+    },
+    {
+      "id": "omnath-locus-of-creation",
+      "name": "Omnath, Locus of Creation",
+      "scryfall_id": "4e4fb50c-a81f-44d3-93c5-fa9a0b37f617",
+      "image_uri": "https://cards.scryfall.io/normal/front/4/e/4e4fb50c-a81f-44d3-93c5-fa9a0b37f617.jpg",
+      "color_identity": [
+        "G",
+        "R",
+        "U",
+        "W"
+      ],
+      "type_line": "Legendary Creature — Elemental",
+      "mana_cost": "{R}{G}{W}{U}",
+      "cmc": 4.0,
+      "deck_count": 39,
+      "deck_count_90d": 3,
+      "deck_count_30d": 0,
+      "is_banned": false,
+      "banned_type": null,
+      "deck_count_180d": 8
+    },
+    {
+      "id": "feldon-ronom-excavator",
+      "name": "Feldon, Ronom Excavator",
+      "scryfall_id": "5ca4cb0e-63ad-4275-a27f-da476260b467",
+      "image_uri": "https://cards.scryfall.io/normal/front/5/c/5ca4cb0e-63ad-4275-a27f-da476260b467.jpg",
+      "color_identity": [
+        "R"
+      ],
+      "type_line": "Legendary Creature — Human Artificer",
+      "mana_cost": "{1}{R}",
+      "cmc": 2.0,
+      "deck_count": 23,
+      "deck_count_90d": 1,
+      "deck_count_30d": 1,
+      "is_banned": false,
+      "banned_type": null,
+      "deck_count_180d": 7
+    },
+    {
+      "id": "jackal-genius-geneticist",
+      "name": "Jackal, Genius Geneticist",
+      "scryfall_id": "185bf150-e032-47af-aafc-3b4b69f0bad4",
+      "image_uri": "https://cards.scryfall.io/normal/front/1/8/185bf150-e032-47af-aafc-3b4b69f0bad4.jpg",
+      "color_identity": [
+        "G",
+        "U"
+      ],
+      "type_line": "Legendary Creature — Human Scientist Villain",
+      "mana_cost": "{G}{U}",
+      "cmc": 2.0,
+      "deck_count": 7,
+      "deck_count_90d": 1,
+      "deck_count_30d": 0,
+      "is_banned": false,
+      "banned_type": null,
+      "deck_count_180d": 7
+    },
+    {
+      "id": "lady-octopus-inspired-inventor",
+      "name": "Lady Octopus, Inspired Inventor",
+      "scryfall_id": "8c5f360b-f9a0-46e0-9e8b-58e5b4b0389e",
+      "image_uri": "https://cards.scryfall.io/normal/front/8/c/8c5f360b-f9a0-46e0-9e8b-58e5b4b0389e.jpg",
+      "color_identity": [
+        "U"
+      ],
+      "type_line": "Legendary Creature — Human Scientist Villain",
+      "mana_cost": "{U}",
+      "cmc": 1.0,
+      "deck_count": 7,
+      "deck_count_90d": 0,
+      "deck_count_30d": 0,
+      "is_banned": false,
+      "banned_type": null,
+      "deck_count_180d": 6
+    },
+    {
+      "id": "phelia-exuberant-shepherd",
+      "name": "Phelia, Exuberant Shepherd",
+      "scryfall_id": "55707746-da6e-46e5-a5ca-7ac843fdc38e",
+      "image_uri": "https://cards.scryfall.io/normal/front/5/5/55707746-da6e-46e5-a5ca-7ac843fdc38e.jpg",
+      "color_identity": [
+        "W"
+      ],
+      "type_line": "Legendary Creature — Dog",
+      "mana_cost": "{1}{W}",
+      "cmc": 2.0,
+      "deck_count": 10,
+      "deck_count_90d": 4,
+      "deck_count_30d": 1,
+      "is_banned": false,
+      "banned_type": null,
+      "deck_count_180d": 5
+    },
+    {
+      "id": "gran-gran",
+      "name": "Gran-Gran",
+      "scryfall_id": "fa434b41-e5f7-4989-865a-95db67b05cb1",
+      "image_uri": "https://cards.scryfall.io/normal/front/f/a/fa434b41-e5f7-4989-865a-95db67b05cb1.jpg",
+      "color_identity": [
+        "U"
+      ],
+      "type_line": "Legendary Creature — Human Peasant Ally",
+      "mana_cost": "{U}",
+      "cmc": 1.0,
+      "deck_count": 5,
+      "deck_count_90d": 5,
+      "deck_count_30d": 1,
+      "is_banned": false,
+      "banned_type": null,
+      "deck_count_180d": 5
+    },
+    {
+      "id": "yoshimaru-ever-faithful",
+      "name": "Yoshimaru, Ever Faithful",
+      "scryfall_id": "aa409269-3698-42a2-8c51-75557b27a6f6",
+      "image_uri": "https://cards.scryfall.io/normal/front/a/a/aa409269-3698-42a2-8c51-75557b27a6f6.jpg",
+      "color_identity": [
+        "W"
+      ],
+      "type_line": "Legendary Creature — Dog",
+      "mana_cost": "{W}",
+      "cmc": 1.0,
+      "deck_count": 22,
+      "deck_count_90d": 2,
+      "deck_count_30d": 2,
+      "is_banned": false,
+      "banned_type": null,
+      "deck_count_180d": 4
+    },
+    {
+      "id": "elminster",
+      "name": "Elminster",
+      "scryfall_id": "06700514-b19c-4fc8-beb1-2c801f320b25",
+      "image_uri": "https://cards.scryfall.io/normal/front/0/6/06700514-b19c-4fc8-beb1-2c801f320b25.jpg",
+      "color_identity": [
+        "U",
+        "W"
+      ],
+      "type_line": "Legendary Planeswalker — Elminster",
+      "mana_cost": "{3}{W}{U}",
+      "cmc": 5.0,
+      "deck_count": 12,
+      "deck_count_90d": 1,
+      "deck_count_30d": 1,
+      "is_banned": false,
+      "banned_type": null,
+      "deck_count_180d": 4
+    },
+    {
+      "id": "leovold-emissary-of-trest",
+      "name": "Leovold, Emissary of Trest",
+      "scryfall_id": "cedfc5b7-9242-4680-b284-debc8b5a9bc7",
+      "image_uri": "https://cards.scryfall.io/normal/front/c/e/cedfc5b7-9242-4680-b284-debc8b5a9bc7.jpg",
+      "color_identity": [
+        "B",
+        "G",
+        "U"
+      ],
+      "type_line": "Legendary Creature — Elf Advisor",
+      "mana_cost": "{B}{G}{U}",
+      "cmc": 3.0,
+      "deck_count": 11,
+      "deck_count_90d": 3,
+      "deck_count_30d": 2,
+      "is_banned": false,
+      "banned_type": null,
+      "deck_count_180d": 4
+    },
+    {
+      "id": "shorikai-genesis-engine",
+      "name": "Shorikai, Genesis Engine",
+      "scryfall_id": "969ac7dd-f3aa-4888-9ff0-d16a31b5e7a9",
+      "image_uri": "https://cards.scryfall.io/normal/front/9/6/969ac7dd-f3aa-4888-9ff0-d16a31b5e7a9.jpg",
+      "color_identity": [
+        "U",
+        "W"
+      ],
+      "type_line": "Legendary Artifact — Vehicle",
+      "mana_cost": "{2}{W}{U}",
+      "cmc": 4.0,
+      "deck_count": 39,
+      "deck_count_90d": 2,
+      "deck_count_30d": 1,
+      "is_banned": false,
+      "banned_type": null,
+      "deck_count_180d": 3
+    },
+    {
+      "id": "asmoranomardicadaistinaculdacar",
+      "name": "Asmoranomardicadaistinaculdacar",
+      "scryfall_id": "2879f780-e17f-4e68-931e-6e45f9df28e1",
+      "image_uri": "https://cards.scryfall.io/normal/front/2/8/2879f780-e17f-4e68-931e-6e45f9df28e1.jpg",
+      "color_identity": [
+        "B",
+        "R"
+      ],
+      "type_line": "Legendary Creature — Human Wizard",
+      "mana_cost": "",
+      "cmc": 0,
+      "deck_count": 38,
+      "deck_count_90d": 2,
+      "deck_count_30d": 0,
+      "is_banned": false,
+      "banned_type": null,
+      "deck_count_180d": 3
+    },
+    {
+      "id": "slimefoot-and-squee",
+      "name": "Slimefoot and Squee",
+      "scryfall_id": "9e449e38-6f03-4316-8ebc-d0faf79d6bc7",
+      "image_uri": "https://cards.scryfall.io/normal/front/9/e/9e449e38-6f03-4316-8ebc-d0faf79d6bc7.jpg",
+      "color_identity": [
+        "B",
+        "G",
+        "R"
+      ],
+      "type_line": "Legendary Creature — Fungus Goblin",
+      "mana_cost": "{B}{R}{G}",
+      "cmc": 3.0,
+      "deck_count": 17,
+      "deck_count_90d": 2,
+      "deck_count_30d": 1,
+      "is_banned": false,
+      "banned_type": null,
+      "deck_count_180d": 3
+    },
+    {
+      "id": "tymna-the-weaver",
+      "name": "Tymna the Weaver",
+      "scryfall_id": "bc7cbe9b-324e-42b8-94e2-36e91cb32163",
+      "image_uri": "https://cards.scryfall.io/normal/front/b/c/bc7cbe9b-324e-42b8-94e2-36e91cb32163.jpg",
+      "color_identity": [
+        "B",
+        "W"
+      ],
+      "type_line": "Legendary Creature — Human Cleric",
+      "mana_cost": "{1}{W}{B}",
+      "cmc": 3.0,
+      "deck_count": 15,
+      "deck_count_90d": 2,
+      "deck_count_30d": 1,
+      "is_banned": false,
+      "banned_type": null,
+      "deck_count_180d": 3
+    },
+    {
+      "id": "vivi-ornitier",
+      "name": "Vivi Ornitier",
+      "scryfall_id": "ada6aeb6-8c9f-4498-9326-b4da0fcb19a3",
+      "image_uri": "https://cards.scryfall.io/normal/front/a/d/ada6aeb6-8c9f-4498-9326-b4da0fcb19a3.jpg",
+      "color_identity": [
+        "R",
+        "U"
+      ],
+      "type_line": "Legendary Creature — Wizard",
+      "mana_cost": "{1}{U}{R}",
+      "cmc": 3.0,
+      "deck_count": 11,
+      "deck_count_90d": 1,
+      "deck_count_30d": 0,
+      "is_banned": false,
+      "banned_type": null,
+      "deck_count_180d": 3
+    },
+    {
+      "id": "rograkh-son-of-rohgahh",
+      "name": "Rograkh, Son of Rohgahh",
+      "scryfall_id": "a4fab67f-00c2-4125-9262-d21a29411797",
+      "image_uri": "https://cards.scryfall.io/normal/front/a/4/a4fab67f-00c2-4125-9262-d21a29411797.jpg",
+      "color_identity": [
+        "R"
+      ],
+      "type_line": "Legendary Creature — Kobold Warrior",
+      "mana_cost": "{0}",
+      "cmc": 0,
+      "deck_count": 11,
+      "deck_count_90d": 2,
+      "deck_count_30d": 1,
+      "is_banned": false,
+      "banned_type": null,
+      "deck_count_180d": 3
+    },
+    {
+      "id": "ludevic-necro-alchemist",
+      "name": "Ludevic, Necro-Alchemist",
+      "scryfall_id": "f3e7a886-2593-4e6e-b9da-d7cb417cba08",
+      "image_uri": "https://cards.scryfall.io/normal/front/f/3/f3e7a886-2593-4e6e-b9da-d7cb417cba08.jpg",
+      "color_identity": [
+        "R",
+        "U"
+      ],
+      "type_line": "Legendary Creature — Human Wizard",
+      "mana_cost": "{1}{U}{R}",
+      "cmc": 3.0,
+      "deck_count": 10,
+      "deck_count_90d": 1,
+      "deck_count_30d": 1,
+      "is_banned": false,
+      "banned_type": null,
+      "deck_count_180d": 3
+    },
+    {
+      "id": "tifa-lockhart",
+      "name": "Tifa Lockhart",
+      "scryfall_id": "fb781323-2746-405d-a9b2-e778c037a6e9",
+      "image_uri": "https://cards.scryfall.io/normal/front/f/b/fb781323-2746-405d-a9b2-e778c037a6e9.jpg",
+      "color_identity": [
+        "G"
+      ],
+      "type_line": "Legendary Creature — Human Monk",
+      "mana_cost": "{1}{G}",
+      "cmc": 2.0,
+      "deck_count": 8,
+      "deck_count_90d": 0,
+      "deck_count_30d": 0,
+      "is_banned": false,
+      "banned_type": null,
+      "deck_count_180d": 3
+    },
+    {
+      "id": "glarb-calamitys-augur",
+      "name": "Glarb, Calamity's Augur",
+      "scryfall_id": "ffc70b2d-5a3a-49ea-97db-175a62248302",
+      "image_uri": "https://cards.scryfall.io/normal/front/f/f/ffc70b2d-5a3a-49ea-97db-175a62248302.jpg",
+      "color_identity": [
+        "B",
+        "G",
+        "U"
+      ],
+      "type_line": "Legendary Creature — Frog Wizard Noble",
+      "mana_cost": "{B}{G}{U}",
+      "cmc": 3.0,
+      "deck_count": 6,
+      "deck_count_90d": 0,
+      "deck_count_30d": 0,
+      "is_banned": false,
+      "banned_type": null,
+      "deck_count_180d": 3
+    },
+    {
+      "id": "deadpool-trading-card",
+      "name": "Deadpool, Trading Card",
+      "scryfall_id": "3a14d6c5-cfd1-4860-834a-5a0dc9df0320",
+      "image_uri": "https://cards.scryfall.io/normal/front/3/a/3a14d6c5-cfd1-4860-834a-5a0dc9df0320.jpg",
+      "color_identity": [
+        "B",
+        "R"
+      ],
+      "type_line": "Legendary Creature — Mutant Mercenary Hero",
+      "mana_cost": "{2}{B}{R}",
+      "cmc": 4.0,
+      "deck_count": 5,
+      "deck_count_90d": 1,
+      "deck_count_30d": 0,
+      "is_banned": false,
+      "banned_type": null,
+      "deck_count_180d": 3
+    }
+  ]
+}

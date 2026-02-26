@@ -1,0 +1,26 @@
+---
+import ColorIcons from './ColorIcons.astro';
+interface Props {
+  id: string;
+  name: string;
+  image_uri: string;
+  deck_count: number;
+  color_identity: string[];
+  is_banned?: boolean;
+}
+const { id, name, image_uri, deck_count, color_identity, is_banned } = Astro.props;
+const placeholder = 'https://cards.scryfall.io/normal/front/0/0/0000000.jpg';
+const img = image_uri || placeholder;
+---
+<a href={`/commanders/${id}`} class="block relative card-hover rounded-lg overflow-hidden bg-gray-900">
+  {is_banned && <span class="absolute top-1 right-1 z-10 text-lg" title="Забанен">🚫</span>}
+  <img src={img} alt={name} class="w-full rounded-t-lg" loading="lazy"
+    onerror="this.style.display='none'" />
+  <div class="p-2">
+    <div class="text-sm font-medium text-gray-100 truncate">{name}</div>
+    <div class="flex items-center justify-between mt-1">
+      <ColorIcons colors={color_identity} />
+      <span class="text-xs text-gray-400">{deck_count} деков</span>
+    </div>
+  </div>
+</a>

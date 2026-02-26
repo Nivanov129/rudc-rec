@@ -1,0 +1,432 @@
+{
+  "banned_as_commander": [
+    {
+      "name": "Yuriko, the Tiger's Shadow",
+      "scryfall_id": "6e4ef5bf-f055-4f0a-b1f4-263081f39104",
+      "type_line": "Legendary Creature — Human Ninja",
+      "image_uri": "https://cards.scryfall.io/normal/front/6/e/6e4ef5bf-f055-4f0a-b1f4-263081f39104.jpg"
+    },
+    {
+      "name": "Prime Speaker Vannifar",
+      "scryfall_id": "84abfc59-10a7-4cb5-9cdd-81797116c810",
+      "type_line": "Legendary Creature — Elf Ooze Wizard",
+      "image_uri": "https://cards.scryfall.io/normal/front/8/4/84abfc59-10a7-4cb5-9cdd-81797116c810.jpg"
+    },
+    {
+      "name": "Baral, Chief of Compliance",
+      "scryfall_id": "60e16d94-1166-4050-8554-686e153a7f80",
+      "type_line": "Legendary Creature — Human Wizard",
+      "image_uri": "https://cards.scryfall.io/normal/front/6/0/60e16d94-1166-4050-8554-686e153a7f80.jpg"
+    },
+    {
+      "name": "Hogaak, Arisen Necropolis",
+      "scryfall_id": "0049e68d-0caf-474f-9523-dad343f1250a",
+      "type_line": "Legendary Creature — Avatar",
+      "image_uri": "https://cards.scryfall.io/normal/front/0/0/0049e68d-0caf-474f-9523-dad343f1250a.jpg"
+    },
+    {
+      "name": "Emry, Lurker of the Loch",
+      "scryfall_id": "d660ced3-6988-4cb8-a2c1-c603012855a8",
+      "type_line": "Legendary Creature — Merfolk Wizard",
+      "image_uri": "https://cards.scryfall.io/normal/front/d/6/d660ced3-6988-4cb8-a2c1-c603012855a8.jpg"
+    },
+    {
+      "name": "Kinnan, Bonder Prodigy",
+      "scryfall_id": "63cda4a0-0dff-4edb-ae67-a2b7e2971350",
+      "type_line": "Legendary Creature — Human Druid",
+      "image_uri": "https://cards.scryfall.io/normal/front/6/3/63cda4a0-0dff-4edb-ae67-a2b7e2971350.jpg"
+    },
+    {
+      "name": "Zurgo Bellstriker",
+      "scryfall_id": "bbac6d75-59ab-4d7d-87ae-46875abf8cc7",
+      "type_line": "Legendary Creature — Orc Warrior",
+      "image_uri": "https://cards.scryfall.io/normal/front/b/b/bbac6d75-59ab-4d7d-87ae-46875abf8cc7.jpg"
+    },
+    {
+      "name": "The Reality Chip",
+      "scryfall_id": "5c9b5926-1f3e-4bc6-8b60-bea8411fa2af",
+      "type_line": "Legendary Artifact Creature — Equipment Jellyfish",
+      "image_uri": "https://cards.scryfall.io/normal/front/5/c/5c9b5926-1f3e-4bc6-8b60-bea8411fa2af.jpg"
+    },
+    {
+      "name": "Raffine, Scheming Seer",
+      "scryfall_id": "da7a42b9-2214-426a-bb62-9ebc2d3e342c",
+      "type_line": "Legendary Creature — Sphinx Demon",
+      "image_uri": "https://cards.scryfall.io/normal/front/d/a/da7a42b9-2214-426a-bb62-9ebc2d3e342c.jpg"
+    },
+    {
+      "name": "Urza, Lord High Artificer",
+      "scryfall_id": "18b26e53-1fc2-4d07-a56f-9000ed25580d",
+      "type_line": "Legendary Creature — Human Artificer",
+      "image_uri": "https://cards.scryfall.io/normal/front/1/8/18b26e53-1fc2-4d07-a56f-9000ed25580d.jpg"
+    },
+    {
+      "name": "Ragavan, Nimble Pilferer",
+      "scryfall_id": "fc898fec-4cc6-4587-b556-c5a8d38ccbd0",
+      "type_line": "Legendary Creature — Monkey Pirate",
+      "image_uri": "https://cards.scryfall.io/normal/front/f/c/fc898fec-4cc6-4587-b556-c5a8d38ccbd0.jpg"
+    },
+    {
+      "name": "Lutri, the Spellchaser",
+      "scryfall_id": "08d24f3f-bff1-4424-a029-3221c4e395b3",
+      "type_line": "Legendary Creature — Elemental Otter",
+      "image_uri": "https://cards.scryfall.io/normal/front/0/8/08d24f3f-bff1-4424-a029-3221c4e395b3.jpg"
+    },
+    {
+      "name": "Ajani, Nacatl Pariah // Ajani, Nacatl Avenger",
+      "scryfall_id": "0d16e8e0-31b2-4389-afd6-783c501f6fa0",
+      "type_line": "Legendary Creature — Cat Warrior // Legendary Planeswalker — Ajani",
+      "image_uri": "https://cards.scryfall.io/normal/front/0/d/0d16e8e0-31b2-4389-afd6-783c501f6fa0.jpg"
+    },
+    {
+      "name": "Eris, Roar of the Storm",
+      "scryfall_id": "e2b33794-d124-4c12-ad5a-efef24a0851b",
+      "type_line": "Legendary Creature — Elemental Warlock",
+      "image_uri": "https://cards.scryfall.io/normal/front/e/2/e2b33794-d124-4c12-ad5a-efef24a0851b.jpg"
+    },
+    {
+      "name": "Inalla, Archmage Ritualist",
+      "scryfall_id": "5887d320-2c65-4295-bd6e-9e49eb1bc2e6",
+      "type_line": "Legendary Creature — Human Wizard",
+      "image_uri": "https://cards.scryfall.io/normal/front/5/8/5887d320-2c65-4295-bd6e-9e49eb1bc2e6.jpg"
+    },
+    {
+      "name": "Tamiyo, Inquisitive Student // Tamiyo, Seasoned Scholar",
+      "scryfall_id": "2a717b98-cdac-416d-bf6c-f6b6638e65d1",
+      "type_line": "Legendary Creature — Moonfolk Wizard // Legendary Planeswalker — Tamiyo",
+      "image_uri": "https://cards.scryfall.io/normal/front/2/a/2a717b98-cdac-416d-bf6c-f6b6638e65d1.jpg"
+    },
+    {
+      "name": "Breya, Etherium Shaper",
+      "scryfall_id": "8bf3929c-957f-4ea2-a27d-7d53979844af",
+      "type_line": "Legendary Artifact Creature — Human",
+      "image_uri": "https://cards.scryfall.io/normal/front/8/b/8bf3929c-957f-4ea2-a27d-7d53979844af.jpg"
+    },
+    {
+      "name": "Nadu, Winged Wisdom",
+      "scryfall_id": "94b67489-5eb0-4406-9bf3-27e50dc632eb",
+      "type_line": "Legendary Creature — Bird Wizard",
+      "image_uri": "https://cards.scryfall.io/normal/front/9/4/94b67489-5eb0-4406-9bf3-27e50dc632eb.jpg"
+    },
+    {
+      "name": "Derevi, Empyrial Tactician",
+      "scryfall_id": "5f538b4e-6ad4-4d30-8699-88bcbde8bf69",
+      "type_line": "Legendary Creature — Bird Wizard",
+      "image_uri": "https://cards.scryfall.io/normal/front/5/f/5f538b4e-6ad4-4d30-8699-88bcbde8bf69.jpg"
+    },
+    {
+      "name": "Uro, Titan of Nature's Wrath",
+      "scryfall_id": "ed1f9061-4df3-4b3c-a8b1-1d62d354de4a",
+      "type_line": "Legendary Creature — Elder Giant",
+      "image_uri": "https://cards.scryfall.io/normal/front/e/d/ed1f9061-4df3-4b3c-a8b1-1d62d354de4a.jpg"
+    },
+    {
+      "name": "Minsc & Boo, Timeless Heroes",
+      "scryfall_id": "dc01ee03-3817-4fd4-a93d-cd1121e62d95",
+      "type_line": "Legendary Planeswalker — Minsc",
+      "image_uri": "https://cards.scryfall.io/normal/front/d/c/dc01ee03-3817-4fd4-a93d-cd1121e62d95.jpg"
+    },
+    {
+      "name": "Norin, Swift Survivalist",
+      "scryfall_id": "f86f4026-b75a-4d74-871e-715ece0225d3",
+      "type_line": "Legendary Creature — Human Coward",
+      "image_uri": "https://cards.scryfall.io/normal/front/f/8/f86f4026-b75a-4d74-871e-715ece0225d3.jpg"
+    },
+    {
+      "name": "Vial Smasher the Fierce",
+      "scryfall_id": "cc7be939-2202-40fe-8899-a05682d76190",
+      "type_line": "Legendary Creature — Goblin Berserker",
+      "image_uri": "https://cards.scryfall.io/normal/front/c/c/cc7be939-2202-40fe-8899-a05682d76190.jpg"
+    },
+    {
+      "name": "Edgar Markov",
+      "scryfall_id": "9a3c8eb0-7a55-4897-8324-f3d08c707c4d",
+      "type_line": "Legendary Creature — Vampire Knight",
+      "image_uri": "https://cards.scryfall.io/normal/front/9/a/9a3c8eb0-7a55-4897-8324-f3d08c707c4d.jpg"
+    },
+    {
+      "name": "Kellan, Planar Trailblazer",
+      "scryfall_id": "f46a9329-7b91-441d-8653-50c1152c9120",
+      "type_line": "Legendary Creature — Human Faerie Scout",
+      "image_uri": "https://cards.scryfall.io/normal/front/f/4/f46a9329-7b91-441d-8653-50c1152c9120.jpg"
+    }
+  ],
+  "banned_in_deck": [
+    {
+      "name": "Mana Crypt",
+      "scryfall_id": "9a61ac58-0bec-4056-be44-fc33db0e067b",
+      "type_line": "Artifact",
+      "image_uri": "https://cards.scryfall.io/normal/front/9/a/9a61ac58-0bec-4056-be44-fc33db0e067b.jpg"
+    },
+    {
+      "name": "Strip Mine",
+      "scryfall_id": "8c44ecce-6019-47f6-b3e8-1394a88ff81e",
+      "type_line": "Land",
+      "image_uri": "https://cards.scryfall.io/normal/front/8/c/8c44ecce-6019-47f6-b3e8-1394a88ff81e.jpg"
+    },
+    {
+      "name": "Mishra's Workshop",
+      "scryfall_id": "135de5c7-6ac9-4b68-8f1a-97f120a4b125",
+      "type_line": "Land",
+      "image_uri": "https://cards.scryfall.io/normal/front/1/3/135de5c7-6ac9-4b68-8f1a-97f120a4b125.jpg"
+    },
+    {
+      "name": "Falling Star",
+      "scryfall_id": "f2b9983e-20d4-4d12-9e2c-ec6d9a345787",
+      "type_line": "Sorcery",
+      "image_uri": "https://cards.scryfall.io/normal/front/f/2/f2b9983e-20d4-4d12-9e2c-ec6d9a345787.jpg"
+    },
+    {
+      "name": "The Tabernacle at Pendrell Vale",
+      "scryfall_id": "64bc9b1d-5818-4d9e-b771-e49af4ff9a5c",
+      "type_line": "Legendary Land",
+      "image_uri": "https://cards.scryfall.io/normal/front/6/4/64bc9b1d-5818-4d9e-b771-e49af4ff9a5c.jpg"
+    },
+    {
+      "name": "Chrome Mox",
+      "scryfall_id": "e59f7138-60e0-444e-aaa3-8769072da916",
+      "type_line": "Artifact",
+      "image_uri": "https://cards.scryfall.io/normal/front/e/5/e59f7138-60e0-444e-aaa3-8769072da916.jpg"
+    },
+    {
+      "name": "Food Chain",
+      "scryfall_id": "18a1bb9e-006c-495e-8f99-d451183d2669",
+      "type_line": "Enchantment",
+      "image_uri": "https://cards.scryfall.io/normal/front/1/8/18a1bb9e-006c-495e-8f99-d451183d2669.jpg"
+    },
+    {
+      "name": "Humility",
+      "scryfall_id": "a2fb7128-806b-4148-80fe-eb967f248021",
+      "type_line": "Enchantment",
+      "image_uri": "https://cards.scryfall.io/normal/front/a/2/a2fb7128-806b-4148-80fe-eb967f248021.jpg"
+    },
+    {
+      "name": "Channel",
+      "scryfall_id": "e42eb95f-638d-410c-a830-a414fb2494ec",
+      "type_line": "Sorcery",
+      "image_uri": "https://cards.scryfall.io/normal/front/e/4/e42eb95f-638d-410c-a830-a414fb2494ec.jpg"
+    },
+    {
+      "name": "Bazaar of Baghdad",
+      "scryfall_id": "ff37b863-f8c4-4584-8cc2-ac0e096e583f",
+      "type_line": "Land",
+      "image_uri": "https://cards.scryfall.io/normal/front/f/f/ff37b863-f8c4-4584-8cc2-ac0e096e583f.jpg"
+    },
+    {
+      "name": "Library of Alexandria",
+      "scryfall_id": "ee266113-34ce-4189-84e7-ee2c86a2722c",
+      "type_line": "Land",
+      "image_uri": "https://cards.scryfall.io/normal/front/e/e/ee266113-34ce-4189-84e7-ee2c86a2722c.jpg"
+    },
+    {
+      "name": "Shahrazad",
+      "scryfall_id": "0014def3-4063-4929-ac51-76aef1bb2a68",
+      "type_line": "Sorcery",
+      "image_uri": "https://cards.scryfall.io/normal/front/0/0/0014def3-4063-4929-ac51-76aef1bb2a68.jpg"
+    },
+    {
+      "name": "Deadly Rollick",
+      "scryfall_id": "c61fa2c0-63c0-4dc2-9f17-5a00530e3348",
+      "type_line": "Instant",
+      "image_uri": "https://cards.scryfall.io/normal/front/c/6/c61fa2c0-63c0-4dc2-9f17-5a00530e3348.jpg"
+    },
+    {
+      "name": "Fierce Guardianship",
+      "scryfall_id": "4c5ffa83-c88d-4f5d-851e-a642b229d596",
+      "type_line": "Instant",
+      "image_uri": "https://cards.scryfall.io/normal/front/4/c/4c5ffa83-c88d-4f5d-851e-a642b229d596.jpg"
+    },
+    {
+      "name": "Gaea's Cradle",
+      "scryfall_id": "25b0b816-0583-44aa-9dc5-f3ff48993a51",
+      "type_line": "Legendary Land",
+      "image_uri": "https://cards.scryfall.io/normal/front/2/5/25b0b816-0583-44aa-9dc5-f3ff48993a51.jpg"
+    },
+    {
+      "name": "Fastbond",
+      "scryfall_id": "c71123b5-6be5-4c3c-972a-0aad3db1a694",
+      "type_line": "Enchantment",
+      "image_uri": "https://cards.scryfall.io/normal/front/c/7/c71123b5-6be5-4c3c-972a-0aad3db1a694.jpg"
+    },
+    {
+      "name": "Mana Vault",
+      "scryfall_id": "5cbc686e-a8ef-40de-b79a-803ef42f8384",
+      "type_line": "Artifact",
+      "image_uri": "https://cards.scryfall.io/normal/front/5/c/5cbc686e-a8ef-40de-b79a-803ef42f8384.jpg"
+    },
+    {
+      "name": "Protean Hulk",
+      "scryfall_id": "dac2252b-2eb4-458d-b838-860ce741a82d",
+      "type_line": "Creature — Beast",
+      "image_uri": "https://cards.scryfall.io/normal/front/d/a/dac2252b-2eb4-458d-b838-860ce741a82d.jpg"
+    },
+    {
+      "name": "Ancestral Recall",
+      "scryfall_id": "2dd41293-d7c8-4422-9f0c-b3e96350f5c9",
+      "type_line": "Instant",
+      "image_uri": "https://cards.scryfall.io/normal/front/2/d/2dd41293-d7c8-4422-9f0c-b3e96350f5c9.jpg"
+    },
+    {
+      "name": "Chaos Orb",
+      "scryfall_id": "7a601041-926f-40fd-8106-39099b87806f",
+      "type_line": "Artifact",
+      "image_uri": "https://cards.scryfall.io/normal/front/7/a/7a601041-926f-40fd-8106-39099b87806f.jpg"
+    },
+    {
+      "name": "Mox Sapphire",
+      "scryfall_id": "f7d82f1d-631e-4668-9d10-7bf0ee515267",
+      "type_line": "Artifact",
+      "image_uri": "https://cards.scryfall.io/normal/front/f/7/f7d82f1d-631e-4668-9d10-7bf0ee515267.jpg"
+    },
+    {
+      "name": "Mox Pearl",
+      "scryfall_id": "c84e8a0e-49a7-46f6-8a37-910e32753528",
+      "type_line": "Artifact",
+      "image_uri": "https://cards.scryfall.io/normal/front/c/8/c84e8a0e-49a7-46f6-8a37-910e32753528.jpg"
+    },
+    {
+      "name": "Time Walk",
+      "scryfall_id": "ade7d00d-4e7b-46e9-ace1-63f628a589fc",
+      "type_line": "Sorcery",
+      "image_uri": "https://cards.scryfall.io/normal/front/a/d/ade7d00d-4e7b-46e9-ace1-63f628a589fc.jpg"
+    },
+    {
+      "name": "Time Vault",
+      "scryfall_id": "0b64dd0f-2e99-41bd-87aa-f623582d64d0",
+      "type_line": "Artifact",
+      "image_uri": "https://cards.scryfall.io/normal/front/0/b/0b64dd0f-2e99-41bd-87aa-f623582d64d0.jpg"
+    },
+    {
+      "name": "Mox Diamond",
+      "scryfall_id": "28028830-83ed-45e2-b495-3b9ad9d3e988",
+      "type_line": "Artifact",
+      "image_uri": "https://cards.scryfall.io/normal/front/2/8/28028830-83ed-45e2-b495-3b9ad9d3e988.jpg"
+    },
+    {
+      "name": "Genesis Storm",
+      "scryfall_id": "066578ed-ffaf-473d-87b8-e614035748b6",
+      "type_line": "Sorcery",
+      "image_uri": "https://cards.scryfall.io/normal/front/0/6/066578ed-ffaf-473d-87b8-e614035748b6.jpg"
+    },
+    {
+      "name": "Vampiric Tutor",
+      "scryfall_id": "18bd50f2-c3ba-4217-a2d5-bb771e199706",
+      "type_line": "Instant",
+      "image_uri": "https://cards.scryfall.io/normal/front/1/8/18bd50f2-c3ba-4217-a2d5-bb771e199706.jpg"
+    },
+    {
+      "name": "Jeweled Lotus",
+      "scryfall_id": "3c7de64b-3dc8-47dd-8999-4353b5a3a06f",
+      "type_line": "Artifact",
+      "image_uri": "https://cards.scryfall.io/normal/front/3/c/3c7de64b-3dc8-47dd-8999-4353b5a3a06f.jpg"
+    },
+    {
+      "name": "Mana Drain",
+      "scryfall_id": "ba874c0c-f66f-4edc-9859-40273487aef0",
+      "type_line": "Instant",
+      "image_uri": "https://cards.scryfall.io/normal/front/b/a/ba874c0c-f66f-4edc-9859-40273487aef0.jpg"
+    },
+    {
+      "name": "Imperial Seal",
+      "scryfall_id": "e71a6bd3-7478-4c3a-8ae0-98352ce28492",
+      "type_line": "Sorcery",
+      "image_uri": "https://cards.scryfall.io/normal/front/e/7/e71a6bd3-7478-4c3a-8ae0-98352ce28492.jpg"
+    },
+    {
+      "name": "Black Lotus",
+      "scryfall_id": "983c1308-d81b-444f-9806-a9723b987af1",
+      "type_line": "Artifact",
+      "image_uri": "https://cards.scryfall.io/normal/front/9/8/983c1308-d81b-444f-9806-a9723b987af1.jpg"
+    },
+    {
+      "name": "Mox Emerald",
+      "scryfall_id": "2e8455b3-a5e8-438f-aacb-79d2719636e3",
+      "type_line": "Artifact",
+      "image_uri": "https://cards.scryfall.io/normal/front/2/e/2e8455b3-a5e8-438f-aacb-79d2719636e3.jpg"
+    },
+    {
+      "name": "Mox Jet",
+      "scryfall_id": "0015d273-5f49-4154-9bd1-d3aef62d1c73",
+      "type_line": "Artifact",
+      "image_uri": "https://cards.scryfall.io/normal/front/0/0/0015d273-5f49-4154-9bd1-d3aef62d1c73.jpg"
+    },
+    {
+      "name": "Mox Ruby",
+      "scryfall_id": "25447654-a6e1-4724-bf33-62eacd35e69e",
+      "type_line": "Artifact",
+      "image_uri": "https://cards.scryfall.io/normal/front/2/5/25447654-a6e1-4724-bf33-62eacd35e69e.jpg"
+    },
+    {
+      "name": "Timetwister",
+      "scryfall_id": "d3c0c1da-e14f-4ce5-a639-c9bb8af0baab",
+      "type_line": "Sorcery",
+      "image_uri": "https://cards.scryfall.io/normal/front/d/3/d3c0c1da-e14f-4ce5-a639-c9bb8af0baab.jpg"
+    },
+    {
+      "name": "Mystical Tutor",
+      "scryfall_id": "7331aade-3b7f-4b4d-b198-2e0b6b80895c",
+      "type_line": "Instant",
+      "image_uri": "https://cards.scryfall.io/normal/front/7/3/7331aade-3b7f-4b4d-b198-2e0b6b80895c.jpg"
+    },
+    {
+      "name": "Karakas",
+      "scryfall_id": "d939ad90-b4b6-452d-a318-b8895d185a0c",
+      "type_line": "Legendary Land",
+      "image_uri": "https://cards.scryfall.io/normal/front/d/9/d939ad90-b4b6-452d-a318-b8895d185a0c.jpg"
+    },
+    {
+      "name": "Deflecting Swat",
+      "scryfall_id": "b4b36435-55b3-4615-8812-af41d4fc64d9",
+      "type_line": "Instant",
+      "image_uri": "https://cards.scryfall.io/normal/front/b/4/b4b36435-55b3-4615-8812-af41d4fc64d9.jpg"
+    },
+    {
+      "name": "Sol Ring",
+      "scryfall_id": "e675f7e2-5c9f-4912-8fdd-daaeda284a3d",
+      "type_line": "Artifact",
+      "image_uri": "https://cards.scryfall.io/normal/front/e/6/e675f7e2-5c9f-4912-8fdd-daaeda284a3d.jpg"
+    },
+    {
+      "name": "Treasure Cruise",
+      "scryfall_id": "d653b8ac-f643-4e0a-bfd4-edc658a18d9c",
+      "type_line": "Sorcery",
+      "image_uri": "https://cards.scryfall.io/normal/front/d/6/d653b8ac-f643-4e0a-bfd4-edc658a18d9c.jpg"
+    },
+    {
+      "name": "Thassa's Oracle",
+      "scryfall_id": "69e615d8-1b79-4a82-ba9f-ee211d67dc95",
+      "type_line": "Creature — Merfolk Wizard",
+      "image_uri": "https://cards.scryfall.io/normal/front/6/9/69e615d8-1b79-4a82-ba9f-ee211d67dc95.jpg"
+    },
+    {
+      "name": "Sensei's Divining Top",
+      "scryfall_id": "f421a21a-763f-479b-bcc3-2abae29098d7",
+      "type_line": "Artifact",
+      "image_uri": "https://cards.scryfall.io/normal/front/f/4/f421a21a-763f-479b-bcc3-2abae29098d7.jpg"
+    },
+    {
+      "name": "Maddening Hex",
+      "scryfall_id": "699efd96-3e68-46fd-897d-cf95a16a8863",
+      "type_line": "Enchantment — Aura Curse",
+      "image_uri": "https://cards.scryfall.io/normal/front/6/9/699efd96-3e68-46fd-897d-cf95a16a8863.jpg"
+    },
+    {
+      "name": "Tinker",
+      "scryfall_id": "ff616131-289b-4eec-bef0-5f519d5a81a5",
+      "type_line": "Sorcery",
+      "image_uri": "https://cards.scryfall.io/normal/front/f/f/ff616131-289b-4eec-bef0-5f519d5a81a5.jpg"
+    },
+    {
+      "name": "Price of Progress",
+      "scryfall_id": "a20751b4-01cb-4b45-9378-cf552a7075e7",
+      "type_line": "Instant",
+      "image_uri": "https://cards.scryfall.io/normal/front/a/2/a20751b4-01cb-4b45-9378-cf552a7075e7.jpg"
+    },
+    {
+      "name": "Hermit Druid",
+      "scryfall_id": "39c66895-9c2d-49db-8261-e300a69b6cd5",
+      "type_line": "Creature — Human Druid",
+      "image_uri": "https://cards.scryfall.io/normal/front/3/9/39c66895-9c2d-49db-8261-e300a69b6cd5.jpg"
+    }
+  ]
+}
