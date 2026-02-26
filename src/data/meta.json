@@ -2,6 +2,8 @@
   "total_decks": 1479,
   "total_commanders": 396,
   "total_unique_cards": 8017,
+  "total_pairs": 40,
+  "total_card_pages": 3831,
   "last_updated": "2026-02-26",
   "color_distribution": {
     "G": 552,
@@ -29,6 +31,8 @@
       "deck_count_30d": 2,
       "is_banned": false,
       "banned_type": null,
+      "has_partners": false,
+      "partners": [],
       "deck_count_180d": 9
     },
     {
@@ -50,6 +54,8 @@
       "deck_count_30d": 0,
       "is_banned": false,
       "banned_type": null,
+      "has_partners": false,
+      "partners": [],
       "deck_count_180d": 8
     },
     {
@@ -68,6 +74,8 @@
       "deck_count_30d": 1,
       "is_banned": false,
       "banned_type": null,
+      "has_partners": false,
+      "partners": [],
       "deck_count_180d": 7
     },
     {
@@ -87,6 +95,8 @@
       "deck_count_30d": 0,
       "is_banned": false,
       "banned_type": null,
+      "has_partners": false,
+      "partners": [],
       "deck_count_180d": 7
     },
     {
@@ -105,6 +115,8 @@
       "deck_count_30d": 0,
       "is_banned": false,
       "banned_type": null,
+      "has_partners": false,
+      "partners": [],
       "deck_count_180d": 6
     },
     {
@@ -123,6 +135,8 @@
       "deck_count_30d": 1,
       "is_banned": false,
       "banned_type": null,
+      "has_partners": false,
+      "partners": [],
       "deck_count_180d": 5
     },
     {
@@ -141,6 +155,8 @@
       "deck_count_30d": 1,
       "is_banned": false,
       "banned_type": null,
+      "has_partners": false,
+      "partners": [],
       "deck_count_180d": 5
     },
     {
@@ -159,6 +175,69 @@
       "deck_count_30d": 2,
       "is_banned": false,
       "banned_type": null,
+      "has_partners": true,
+      "partners": [
+        {
+          "name": "Ludevic, Necro-Alchemist",
+          "id": "ludevic-necro-alchemist",
+          "image_uri": "https://cards.scryfall.io/normal/front/f/3/f3e7a886-2593-4e6e-b9da-d7cb417cba08.jpg",
+          "deck_count": 6
+        },
+        {
+          "name": "Tana, the Bloodsower",
+          "id": "tana-the-bloodsower",
+          "image_uri": "https://cards.scryfall.io/normal/front/a/3/a3d8d64f-a403-42a7-881b-4f70e9fe15a2.jpg",
+          "deck_count": 6
+        },
+        {
+          "name": "Dargo, the Shipwrecker",
+          "id": "dargo-the-shipwrecker",
+          "image_uri": "https://cards.scryfall.io/normal/front/a/4/a4e9002d-782c-460e-8f0c-4763fffc9e3e.jpg",
+          "deck_count": 2
+        },
+        {
+          "name": "Kraum, Ludevic's Opus",
+          "id": "kraum-ludevics-opus",
+          "image_uri": "https://cards.scryfall.io/normal/front/5/5/557fcd17-6cb3-414a-b2b1-ea9ae32e5aec.jpg",
+          "deck_count": 2
+        },
+        {
+          "name": "Bruse Tarl, Boorish Herder",
+          "id": "bruse-tarl-boorish-herder",
+          "image_uri": "https://cards.scryfall.io/normal/front/1/2/125b552b-45ea-4e0b-94a9-8131c97a04c0.jpg",
+          "deck_count": 1
+        },
+        {
+          "name": "Silas Renn, Seeker Adept",
+          "id": "silas-renn-seeker-adept",
+          "image_uri": "https://cards.scryfall.io/normal/front/4/e/4e3fe912-1374-47c7-b73f-89ef55c479c1.jpg",
+          "deck_count": 1
+        },
+        {
+          "name": "Thrasios, Triton Hero",
+          "id": "thrasios-triton-hero",
+          "image_uri": "https://cards.scryfall.io/normal/front/2/1/21e27b91-c7f1-4709-aa0d-8b5d81b22a0a.jpg",
+          "deck_count": 1
+        },
+        {
+          "name": "Vial Smasher the Fierce",
+          "id": "vial-smasher-the-fierce",
+          "image_uri": "https://cards.scryfall.io/normal/front/c/c/cc7be939-2202-40fe-8899-a05682d76190.jpg",
+          "deck_count": 1
+        },
+        {
+          "name": "Jeska, Thrice Reborn",
+          "id": "jeska-thrice-reborn",
+          "image_uri": "https://cards.scryfall.io/normal/front/2/d/2de336a3-224f-49e0-b4ff-34bf3de398bf.jpg",
+          "deck_count": 1
+        },
+        {
+          "name": "Malcolm, Keen-Eyed Navigator",
+          "id": "malcolm-keen-eyed-navigator",
+          "image_uri": "https://cards.scryfall.io/normal/front/5/1/51187cdb-85ee-4f68-9e29-d84d296f0825.jpg",
+          "deck_count": 1
+        }
+      ],
       "deck_count_180d": 4
     },
     {
@@ -178,6 +257,8 @@
       "deck_count_30d": 1,
       "is_banned": false,
       "banned_type": null,
+      "has_partners": false,
+      "partners": [],
       "deck_count_180d": 4
     },
     {
@@ -198,6 +279,8 @@
       "deck_count_30d": 2,
       "is_banned": false,
       "banned_type": null,
+      "has_partners": false,
+      "partners": [],
       "deck_count_180d": 4
     },
     {
@@ -217,6 +300,8 @@
       "deck_count_30d": 1,
       "is_banned": false,
       "banned_type": null,
+      "has_partners": false,
+      "partners": [],
       "deck_count_180d": 3
     },
     {
@@ -236,6 +321,8 @@
       "deck_count_30d": 0,
       "is_banned": false,
       "banned_type": null,
+      "has_partners": false,
+      "partners": [],
       "deck_count_180d": 3
     },
     {
@@ -256,6 +343,8 @@
       "deck_count_30d": 1,
       "is_banned": false,
       "banned_type": null,
+      "has_partners": false,
+      "partners": [],
       "deck_count_180d": 3
     },
     {
@@ -275,6 +364,33 @@
       "deck_count_30d": 1,
       "is_banned": false,
       "banned_type": null,
+      "has_partners": true,
+      "partners": [
+        {
+          "name": "Rograkh, Son of Rohgahh",
+          "id": "rograkh-son-of-rohgahh",
+          "image_uri": "https://cards.scryfall.io/normal/front/a/4/a4fab67f-00c2-4125-9262-d21a29411797.jpg",
+          "deck_count": 6
+        },
+        {
+          "name": "Thrasios, Triton Hero",
+          "id": "thrasios-triton-hero",
+          "image_uri": "https://cards.scryfall.io/normal/front/2/1/21e27b91-c7f1-4709-aa0d-8b5d81b22a0a.jpg",
+          "deck_count": 3
+        },
+        {
+          "name": "Ludevic, Necro-Alchemist",
+          "id": "ludevic-necro-alchemist",
+          "image_uri": "https://cards.scryfall.io/normal/front/f/3/f3e7a886-2593-4e6e-b9da-d7cb417cba08.jpg",
+          "deck_count": 3
+        },
+        {
+          "name": "Kraum, Ludevic's Opus",
+          "id": "kraum-ludevics-opus",
+          "image_uri": "https://cards.scryfall.io/normal/front/5/5/557fcd17-6cb3-414a-b2b1-ea9ae32e5aec.jpg",
+          "deck_count": 2
+        }
+      ],
       "deck_count_180d": 3
     },
     {
@@ -294,6 +410,8 @@
       "deck_count_30d": 0,
       "is_banned": false,
       "banned_type": null,
+      "has_partners": false,
+      "partners": [],
       "deck_count_180d": 3
     },
     {
@@ -312,6 +430,33 @@
       "deck_count_30d": 1,
       "is_banned": false,
       "banned_type": null,
+      "has_partners": true,
+      "partners": [
+        {
+          "name": "Tymna the Weaver",
+          "id": "tymna-the-weaver",
+          "image_uri": "https://cards.scryfall.io/normal/front/b/c/bc7cbe9b-324e-42b8-94e2-36e91cb32163.jpg",
+          "deck_count": 6
+        },
+        {
+          "name": "Tevesh Szat, Doom of Fools",
+          "id": "tevesh-szat-doom-of-fools",
+          "image_uri": "https://cards.scryfall.io/normal/front/8/f/8f244716-78ab-46f5-b6e9-fc1e6db28052.jpg",
+          "deck_count": 2
+        },
+        {
+          "name": "Silas Renn, Seeker Adept",
+          "id": "silas-renn-seeker-adept",
+          "image_uri": "https://cards.scryfall.io/normal/front/4/e/4e3fe912-1374-47c7-b73f-89ef55c479c1.jpg",
+          "deck_count": 2
+        },
+        {
+          "name": "Reyhan, Last of the Abzan",
+          "id": "reyhan-last-of-the-abzan",
+          "image_uri": "https://cards.scryfall.io/normal/front/8/a/8afad106-a49b-4910-959e-228c109ea983.jpg",
+          "deck_count": 1
+        }
+      ],
       "deck_count_180d": 3
     },
     {
@@ -331,6 +476,21 @@
       "deck_count_30d": 1,
       "is_banned": false,
       "banned_type": null,
+      "has_partners": true,
+      "partners": [
+        {
+          "name": "Yoshimaru, Ever Faithful",
+          "id": "yoshimaru-ever-faithful",
+          "image_uri": "https://cards.scryfall.io/normal/front/a/a/aa409269-3698-42a2-8c51-75557b27a6f6.jpg",
+          "deck_count": 6
+        },
+        {
+          "name": "Tymna the Weaver",
+          "id": "tymna-the-weaver",
+          "image_uri": "https://cards.scryfall.io/normal/front/b/c/bc7cbe9b-324e-42b8-94e2-36e91cb32163.jpg",
+          "deck_count": 3
+        }
+      ],
       "deck_count_180d": 3
     },
     {
@@ -349,6 +509,8 @@
       "deck_count_30d": 0,
       "is_banned": false,
       "banned_type": null,
+      "has_partners": false,
+      "partners": [],
       "deck_count_180d": 3
     },
     {
@@ -369,6 +531,8 @@
       "deck_count_30d": 0,
       "is_banned": false,
       "banned_type": null,
+      "has_partners": false,
+      "partners": [],
       "deck_count_180d": 3
     },
     {
@@ -388,6 +552,8 @@
       "deck_count_30d": 0,
       "is_banned": false,
       "banned_type": null,
+      "has_partners": false,
+      "partners": [],
       "deck_count_180d": 3
     }
   ]

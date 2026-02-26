@@ -1,0 +1,56 @@
+---
+import Layout from '../layouts/Layout.astro';
+import cardsList from '../data/cards.json';
+
+const top100 = (cardsList as any[]).slice(0, 100);
+---
+<Layout title="Топ карт формата">
+  <h1 class="text-3xl font-bold text-amber-400 mb-6">Топ карт формата</h1>
+
+  <div class="flex flex-wrap gap-2 mb-6">
+    <button data-filter="all" class="filter-btn px-4 py-2 rounded text-sm font-medium bg-amber-600 text-white">Все</button>
+    <button data-filter="creature" class="filter-btn px-4 py-2 rounded text-sm font-medium bg-gray-800 text-gray-400 hover:text-white">Существа</button>
+    <button data-filter="instant" class="filter-btn px-4 py-2 rounded text-sm font-medium bg-gray-800 text-gray-400 hover:text-white">Мгновенные</button>
+    <button data-filter="sorcery" class="filter-btn px-4 py-2 rounded text-sm font-medium bg-gray-800 text-gray-400 hover:text-white">Волшебства</button>
+    <button data-filter="artifact" class="filter-btn px-4 py-2 rounded text-sm font-medium bg-gray-800 text-gray-400 hover:text-white">Артефакты</button>
+    <button data-filter="enchantment" class="filter-btn px-4 py-2 rounded text-sm font-medium bg-gray-800 text-gray-400 hover:text-white">Чары</button>
+    <button data-filter="land" class="filter-btn px-4 py-2 rounded text-sm font-medium bg-gray-800 text-gray-400 hover:text-white">Земли</button>
+  </div>
+
+  <div id="cards-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3">
+    {top100.map((card: any, i: number) => (
+      <a href={`/cards/${card.slug}`} class="card-item rounded-lg overflow-hidden bg-gray-900 block hover:ring-2 hover:ring-amber-500 transition" data-type={card.type_line.toLowerCase()} data-card-preview={card.image_uri}>
+        <div class="relative">
+          {card.image_uri && <img src={card.image_uri} alt={card.name} class="w-full" loading="lazy" onerror="this.style.display='none'" />}
+          <div class="absolute top-1 left-1 bg-black/70 text-amber-400 text-xs font-bold px-2 py-0.5 rounded">#{i + 1}</div>
+        </div>
+        <div class="p-2">
+          <div class="text-xs font-medium truncate">{card.name}</div>
+          <div class="flex justify-between text-xs text-gray-400 mt-1">
+            <span>{card.total_decks} деков</span>
+            <span>{card.total_pct}%</span>
+          </div>
+        </div>
+      </a>
+    ))}
+  </div>
+
+  <script>
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = (btn as HTMLElement).dataset.filter!;
+        document.querySelectorAll('.filter-btn').forEach(b => b.className = 'filter-btn px-4 py-2 rounded text-sm font-medium bg-gray-800 text-gray-400 hover:text-white');
+        btn.className = 'filter-btn px-4 py-2 rounded text-sm font-medium bg-amber-600 text-white';
+        document.querySelectorAll('.card-item').forEach(card => {
+          const el = card as HTMLElement;
+          const type = el.dataset.type || '';
+          if (filter === 'all' || type.includes(filter)) {
+            el.style.display = '';
+          } else {
+            el.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</Layout>

@@ -1,0 +1,75 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ColorIcons from '../../components/ColorIcons.astro';
+import fs from 'node:fs';
+import path from 'node:path';
+import cardsList from '../../data/cards.json';
+
+export function getStaticPaths() {
+  return (cardsList as any[])
+    .filter((c: any) => c.total_decks >= 3)
+    .map((c: any) => ({ params: { slug: c.slug } }));
+}
+
+const { slug } = Astro.params;
+const dataPath = path.join(process.cwd(), 'src', 'data', 'cards', `${slug}.json`);
+const data = JSON.parse(fs.readFileSync(dataPath, 'utf-8'));
+---
+<Layout title={data.name}>
+  <div class="flex flex-col md:flex-row gap-8 mb-10">
+    <div class="w-full md:w-72 shrink-0">
+      {data.image_uri && <img src={data.image_uri} alt={data.name} class="w-full rounded-xl shadow-2xl" />}
+    </div>
+    <div>
+      <h1 class="text-3xl font-bold text-amber-400 mb-2">{data.name}</h1>
+      <p class="text-gray-400 mb-3">{data.type_line}</p>
+      <div class="flex items-center gap-3 mb-4">
+        <ColorIcons colors={data.color_identity} size="w-6 h-6" />
+      </div>
+      <div class="flex gap-4 mb-4">
+        <div class="bg-gray-900 rounded p-4">
+          <div class="text-2xl font-bold text-amber-400">{data.total_decks}</div>
+          <div class="text-xs text-gray-400">Деков</div>
+        </div>
+        <div class="bg-gray-900 rounded p-4">
+          <div class="text-2xl font-bold text-amber-400">{data.total_pct}%</div>
+          <div class="text-xs text-gray-400">Формата</div>
+        </div>
+      </div>
+      <a href={`https://scryfall.com/card/${data.scryfall_id}`} target="_blank" class="text-amber-400 hover:text-amber-300 text-sm">Открыть на Scryfall ↗</a>
+    </div>
+  </div>
+
+  {data.commanders && data.commanders.length > 0 && (
+    <div>
+      <h2 class="text-2xl font-bold text-amber-400 mb-4">Коммандеры ({data.commanders.length})</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead class="text-gray-400 border-b border-gray-800">
+            <tr>
+              <th class="text-left py-2 px-2">Коммандер</th>
+              <th class="text-right py-2 px-2">Включение</th>
+              <th class="text-right py-2 px-2">Синергия</th>
+              <th class="text-right py-2 px-2">Деков</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data.commanders.map((c: any) => (
+              <tr class="border-b border-gray-800/50 hover:bg-gray-900">
+                <td class="py-2 px-2">
+                  <a href={`/commanders/${c.id}`} class="flex items-center gap-2 hover:text-amber-400">
+                    {c.image_uri && <img src={c.image_uri} alt={c.name} class="w-8 h-8 rounded object-cover" loading="lazy" />}
+                    <span>{c.name}</span>
+                  </a>
+                </td>
+                <td class="text-right py-2 px-2">{c.inclusion_pct}%</td>
+                <td class="text-right py-2 px-2"><span class={c.synergy >= 0 ? 'text-green-400' : 'text-red-400'}>{c.synergy > 0 ? '+' : ''}{c.synergy}%</span></td>
+                <td class="text-right py-2 px-2 text-gray-400">{c.deck_count}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  )}
+</Layout>

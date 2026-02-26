@@ -80,7 +80,7 @@ const categories = [
         <div data-panel={cat.key} class={`tab-panel ${i === 0 ? '' : 'hidden'}`}>
           <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3">
             {cards.slice(0, 30).map((card: any) => (
-              <div class="card-hover rounded-lg overflow-hidden bg-gray-900">
+              <a href={card.slug ? `/cards/${card.slug}` : '#'} class="card-hover rounded-lg overflow-hidden bg-gray-900 block hover:ring-2 hover:ring-amber-500 transition" data-card-preview={card.image_uri}>
                 {card.image_uri && (
                   <img src={card.image_uri} alt={card.name} class="w-full" loading="lazy" onerror="this.style.display='none'" />
                 )}
@@ -91,13 +91,38 @@ const categories = [
                     <span class="text-green-400">+{card.synergy}%</span>
                   </div>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         </div>
       );
     })}
   </div>
+
+  <!-- Partners section -->
+  {commander.has_partners && commander.partners && commander.partners.length > 0 && (
+    <div class="mb-8">
+      <div class="bg-gray-900 border border-amber-600/30 rounded-lg p-4 mb-4">
+        <span class="text-amber-400 font-medium">🤝 Этот коммандер играется с партнёром</span>
+        <a href={`/partners/${commander.id}`} class="ml-2 text-amber-400 hover:text-amber-300 underline text-sm">Все партнёры →</a>
+      </div>
+      <h2 class="text-2xl font-bold text-amber-400 mb-4">Популярные партнёры</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+        {commander.partners.slice(0, 10).map((p: any) => {
+          const pairId = [commander.id, p.id].sort().join('--');
+          return (
+            <a href={`/commanders/${pairId}`} class="bg-gray-900 rounded-lg overflow-hidden hover:ring-2 hover:ring-amber-500 transition block">
+              {p.image_uri && <img src={p.image_uri} alt={p.name} class="w-full" loading="lazy" />}
+              <div class="p-2">
+                <div class="text-xs font-medium truncate">{p.name}</div>
+                <div class="text-xs text-gray-400 mt-1">{p.deck_count} деков</div>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  )}
 
   <!-- Decklists -->
   {decks && decks.length > 0 && (

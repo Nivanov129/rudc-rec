@@ -12,12 +12,17 @@ const { title } = Astro.props;
 </head>
 <body class="bg-gray-950 text-gray-100 min-h-screen">
   <nav class="bg-gray-900 border-b border-gray-800 sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center gap-6">
-      <a href="/" class="text-xl font-bold text-amber-400 hover:text-amber-300">RUDC REC</a>
-      <div class="flex gap-4 text-sm">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center gap-4 flex-wrap">
+      <a href="/" class="text-xl font-bold text-amber-400 hover:text-amber-300 shrink-0">RUDC REC</a>
+      <div class="flex gap-4 text-sm shrink-0">
         <a href="/commanders" class="text-gray-300 hover:text-amber-400">Коммандеры</a>
+        <a href="/top-cards" class="text-gray-300 hover:text-amber-400">Топ карт</a>
         <a href="/banlist" class="text-gray-300 hover:text-amber-400">Бан-лист</a>
         <a href="/rules" class="text-gray-300 hover:text-amber-400">Правила</a>
+      </div>
+      <div class="relative ml-auto" id="search-container">
+        <input type="text" id="search-input" placeholder="Поиск коммандеров и карт..." class="bg-gray-800 text-gray-100 text-sm rounded-lg px-3 py-1.5 w-48 md:w-64 border border-gray-700 focus:border-amber-500 focus:outline-none" autocomplete="off" />
+        <div id="search-results" class="absolute top-full left-0 right-0 mt-1 bg-gray-900 border border-gray-700 rounded-lg shadow-xl max-h-80 overflow-y-auto hidden z-50"></div>
       </div>
     </div>
   </nav>
@@ -27,5 +32,75 @@ const { title } = Astro.props;
   <footer class="border-t border-gray-800 mt-16 py-6 text-center text-gray-500 text-sm">
     RUDC REC — Статистика Russian Duel Commander
   </footer>
+
+  <!-- Card hover preview -->
+  <div id="card-preview" class="fixed pointer-events-none z-[100] hidden">
+    <img id="card-preview-img" src="" alt="" class="w-56 rounded-lg shadow-2xl" />
+  </div>
+
+  <script>
+    // Search
+    let searchData: any[] | null = null;
+    const input = document.getElementById('search-input') as HTMLInputElement;
+    const results = document.getElementById('search-results')!;
+
+    async function loadSearch() {
+      if (searchData) return searchData;
+      const res = await fetch('/data/search-index.json');
+      searchData = await res.json();
+      return searchData;
+    }
+
+    input?.addEventListener('focus', () => loadSearch());
+    input?.addEventListener('input', async () => {
+      const q = input.value.toLowerCase().trim();
+      if (q.length < 2) { results.classList.add('hidden'); return; }
+      const data = await loadSearch();
+      if (!data) return;
+      const matches = data.filter((item: any) => item.n.toLowerCase().includes(q)).slice(0, 12);
+      if (matches.length === 0) { results.classList.add('hidden'); return; }
+      results.innerHTML = matches.map((item: any) => {
+        const url = item.t === 'c' ? `/commanders/${item.id}` : `/cards/${item.id}`;
+        const badge = item.t === 'c' ? '<span class="text-xs bg-amber-600/30 text-amber-400 px-1 rounded">CMD</span>' : '<span class="text-xs bg-blue-600/30 text-blue-400 px-1 rounded">CARD</span>';
+        return `<a href="${url}" class="flex items-center gap-2 px-3 py-2 hover:bg-gray-800 text-sm">
+          ${item.img ? `<img src="${item.img}" class="w-6 h-8 rounded object-cover shrink-0" />` : ''}
+          <span class="truncate">${item.n}</span>
+          ${badge}
+          <span class="text-gray-500 text-xs ml-auto">${item.d}</span>
+        </a>`;
+      }).join('');
+      results.classList.remove('hidden');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!(e.target as Element)?.closest('#search-container')) results.classList.add('hidden');
+    });
+
+    // Card hover preview
+    const preview = document.getElementById('card-preview')!;
+    const previewImg = document.getElementById('card-preview-img') as HTMLImageElement;
+
+    document.addEventListener('mouseenter', (e) => {
+      const el = (e.target as Element)?.closest('[data-card-preview]') as HTMLElement;
+      if (!el) return;
+      const src = el.dataset.cardPreview;
+      if (!src) return;
+      previewImg.src = src;
+      preview.classList.remove('hidden');
+    }, true);
+
+    document.addEventListener('mouseleave', (e) => {
+      const el = (e.target as Element)?.closest('[data-card-preview]');
+      if (el) preview.classList.add('hidden');
+    }, true);
+
+    document.addEventListener('mousemove', (e) => {
+      if (preview.classList.contains('hidden')) return;
+      const x = Math.min(e.clientX + 16, window.innerWidth - 240);
+      const y = Math.min(e.clientY - 40, window.innerHeight - 360);
+      preview.style.left = x + 'px';
+      preview.style.top = Math.max(8, y) + 'px';
+    });
+  </script>
 </body>
 </html>
