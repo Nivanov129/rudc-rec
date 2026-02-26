@@ -73,7 +73,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
             <div class="text-sm font-medium text-gray-100 truncate">{c.name}</div>
             <div class="flex items-center justify-between mt-1">
               <ColorIcons colors={c.color_identity} />
-              <span class="deck-count text-xs text-gray-400">{c.deck_count} деков</span>
+              <span class="deck-count text-xs text-gray-400">{c.deck_count} деклистов</span>
             </div>
           </div>
         </a>
@@ -112,7 +112,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         // Update deck count label
         const label = el.querySelector('.deck-count') as HTMLElement;
         if (label) {
-          const suffix = deckCount === 1 ? 'дек' : (deckCount >= 2 && deckCount <= 4) ? 'дека' : 'деков';
+          const suffix = deckCount === 1 ? 'деклист' : (deckCount >= 2 && deckCount <= 4) ? 'деклиста' : 'деклистов';
           label.textContent = `${deckCount} ${suffix}`;
         }
       });
