@@ -12,7 +12,12 @@ export function getStaticPaths() {
 const { id } = Astro.params;
 const dataPath = path.join(process.cwd(), 'src', 'data', 'commanders', `${id}.json`);
 const data = JSON.parse(fs.readFileSync(dataPath, 'utf-8'));
-const { commander, top_cards, decks } = data;
+const { commander, top_cards, decks: rawDecks } = data;
+const decks = rawDecks?.slice().sort((a: any, b: any) => {
+  const da = a.created_at ? new Date(a.created_at).getTime() : 0;
+  const db = b.created_at ? new Date(b.created_at).getTime() : 0;
+  return db - da;
+});
 
 const categories = [
   { key: 'creatures', label: 'Существа' },
