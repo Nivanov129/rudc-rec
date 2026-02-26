@@ -16,7 +16,7 @@ const dataPath = path.join(process.cwd(), 'src', 'data', 'cards', `${slug}.json`
 const data = JSON.parse(fs.readFileSync(dataPath, 'utf-8'));
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
-<Layout title={data.name}>
+<Layout title={data.name} description={`${data.name} — в ${data.total_decks} деках RUDC (${data.format_pct}%)`} image={data.image_uri}>
   <div class="flex flex-col md:flex-row gap-8 mb-10">
     <div class="w-full md:w-72 shrink-0">
       {data.image_uri && <img src={data.image_uri} alt={data.name} class="w-full rounded-xl shadow-2xl" />}

@@ -25,7 +25,7 @@ const categories = [
 ];
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
-<Layout title={commander.name}>
+<Layout title={commander.name} description={`${commander.name} — ${commander.deck_count} деклистов в Russian Duel Commander`} image={commander.image_uri}>
   <div class="flex flex-col md:flex-row gap-8 mb-10">
     <div class="w-full md:w-80 shrink-0">
       {commander.image_uri && (
