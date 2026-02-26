@@ -2,12 +2,35 @@
 import Layout from '../layouts/Layout.astro';
 import cardsList from '../data/cards.json';
 
-const top100 = (cardsList as any[]).slice(0, 100);
+const allCards = cardsList as any[];
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const colorButtons = [
+  { c: 'W', hex: '#F9FAF4', label: 'Белый' },
+  { c: 'U', hex: '#0E68AB', label: 'Синий' },
+  { c: 'B', hex: '#555555', label: 'Чёрный' },
+  { c: 'R', hex: '#D3202A', label: 'Красный' },
+  { c: 'G', hex: '#00733E', label: 'Зелёный' },
+];
 ---
 <Layout title="Топ карт формата">
   <h1 class="text-3xl font-bold text-amber-400 mb-6">Топ карт формата</h1>
 
+  <!-- Color Identity filter -->
+  <div class="flex flex-wrap gap-2 mb-4 items-center">
+    <span class="text-gray-400 text-sm mr-2">Color Identity коммандера:</span>
+    {colorButtons.map(({ c, hex, label }) => (
+      <button
+        data-color={c}
+        class="color-filter w-8 h-8 rounded-full border-2 border-transparent hover:border-amber-400 transition"
+        style={`background-color: ${hex}`}
+        title={label}
+      ></button>
+    ))}
+    <button id="clear-colors" class="text-xs text-gray-400 hover:text-amber-400 ml-2">Сброс</button>
+    <span id="color-hint" class="text-xs text-gray-500 ml-2">Выбери цвета коммандера — покажем карты для этой identity</span>
+  </div>
+
+  <!-- Type filter -->
   <div class="flex flex-wrap gap-2 mb-6">
     <button data-filter="all" class="filter-btn px-4 py-2 rounded text-sm font-medium bg-amber-600 text-white">Все</button>
     <button data-filter="creature" class="filter-btn px-4 py-2 rounded text-sm font-medium bg-gray-800 text-gray-400 hover:text-white">Существа</button>
@@ -16,14 +39,24 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     <button data-filter="artifact" class="filter-btn px-4 py-2 rounded text-sm font-medium bg-gray-800 text-gray-400 hover:text-white">Артефакты</button>
     <button data-filter="enchantment" class="filter-btn px-4 py-2 rounded text-sm font-medium bg-gray-800 text-gray-400 hover:text-white">Чары</button>
     <button data-filter="land" class="filter-btn px-4 py-2 rounded text-sm font-medium bg-gray-800 text-gray-400 hover:text-white">Земли</button>
+    <button data-filter="planeswalker" class="filter-btn px-4 py-2 rounded text-sm font-medium bg-gray-800 text-gray-400 hover:text-white">Planeswalkers</button>
   </div>
 
+  <div id="card-count" class="text-sm text-gray-400 mb-4">Показано: 100 карт</div>
+
   <div id="cards-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3">
-    {top100.map((card: any, i: number) => (
-      <a href={`${base}/cards/${card.slug}`} class="card-item rounded-lg overflow-hidden bg-gray-900 block hover:ring-2 hover:ring-amber-500 transition" data-type={card.type_line.toLowerCase()} data-card-preview={card.image_uri}>
+    {allCards.map((card: any, i: number) => (
+      <a href={`${base}/cards/${card.slug}`}
+        class="card-item rounded-lg overflow-hidden bg-gray-900 block hover:ring-2 hover:ring-amber-500 transition"
+        data-type={card.type_line.toLowerCase()}
+        data-colors={card.color_identity.join(',')}
+        data-decks={card.total_decks}
+        data-rank={i + 1}
+        data-card-preview={card.image_uri}
+        style={i >= 100 ? 'display:none' : ''}>
         <div class="relative">
           {card.image_uri && <img src={card.image_uri} alt={card.name} class="w-full" loading="lazy" onerror="this.style.display='none'" />}
-          <div class="absolute top-1 left-1 bg-black/70 text-amber-400 text-xs font-bold px-2 py-0.5 rounded">#{i + 1}</div>
+          <div class="rank-badge absolute top-1 left-1 bg-black/70 text-amber-400 text-xs font-bold px-2 py-0.5 rounded">#{i + 1}</div>
         </div>
         <div class="p-2">
           <div class="text-xs font-medium truncate">{card.name}</div>
@@ -37,20 +70,78 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   </div>
 
   <script>
+    const selectedColors = new Set<string>();
+    let currentTypeFilter = 'all';
+    const MAX_SHOW = 200;
+
+    function applyFilters() {
+      const items = document.querySelectorAll('.card-item') as NodeListOf<HTMLElement>;
+      let shown = 0;
+      let rank = 0;
+
+      items.forEach(el => {
+        const type = el.dataset.type || '';
+        const cardColors = el.dataset.colors ? el.dataset.colors.split(',').filter(Boolean) : [];
+
+        // Type filter
+        const typeMatch = currentTypeFilter === 'all' || type.includes(currentTypeFilter);
+
+        // Color identity filter: card colors must be SUBSET of selected colors
+        // If no colors selected — show all
+        let colorMatch = true;
+        if (selectedColors.size > 0) {
+          colorMatch = cardColors.every(c => selectedColors.has(c));
+        }
+
+        if (typeMatch && colorMatch && shown < MAX_SHOW) {
+          el.style.display = '';
+          shown++;
+          rank++;
+          const badge = el.querySelector('.rank-badge') as HTMLElement;
+          if (badge) badge.textContent = `#${rank}`;
+        } else {
+          el.style.display = 'none';
+        }
+      });
+
+      const hint = document.getElementById('color-hint')!;
+      if (selectedColors.size > 0) {
+        hint.textContent = `Карты для ${[...selectedColors].join('')} identity`;
+      } else {
+        hint.textContent = 'Выбери цвета коммандера — покажем карты для этой identity';
+      }
+
+      document.getElementById('card-count')!.textContent = `Показано: ${shown} карт`;
+    }
+
+    // Color filter buttons
+    document.querySelectorAll('.color-filter').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const c = (btn as HTMLElement).dataset.color!;
+        if (selectedColors.has(c)) {
+          selectedColors.delete(c);
+          (btn as HTMLElement).style.borderColor = 'transparent';
+        } else {
+          selectedColors.add(c);
+          (btn as HTMLElement).style.borderColor = '#D4A017';
+        }
+        applyFilters();
+      });
+    });
+
+    document.getElementById('clear-colors')?.addEventListener('click', () => {
+      selectedColors.clear();
+      document.querySelectorAll('.color-filter').forEach(b => (b as HTMLElement).style.borderColor = 'transparent');
+      applyFilters();
+    });
+
+    // Type filter buttons
     document.querySelectorAll('.filter-btn').forEach(btn => {
       btn.addEventListener('click', () => {
-        const filter = (btn as HTMLElement).dataset.filter!;
+        currentTypeFilter = (btn as HTMLElement).dataset.filter!;
         document.querySelectorAll('.filter-btn').forEach(b => b.className = 'filter-btn px-4 py-2 rounded text-sm font-medium bg-gray-800 text-gray-400 hover:text-white');
         btn.className = 'filter-btn px-4 py-2 rounded text-sm font-medium bg-amber-600 text-white';
-        document.querySelectorAll('.card-item').forEach(card => {
-          const el = card as HTMLElement;
-          const type = el.dataset.type || '';
-          if (filter === 'all' || type.includes(filter)) {
-            el.style.display = '';
-          } else {
-            el.style.display = 'none';
-          }
-        });
+        applyFilters();
       });
     });
   </script>
