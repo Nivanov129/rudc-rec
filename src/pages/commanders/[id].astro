@@ -147,7 +147,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
               <tr class="border-b border-gray-800/50 hover:bg-gray-900">
                 <td class="py-2 px-2">{d.name || 'Без названия'}</td>
                 <td class="py-2 px-2 text-gray-400">{d.author || '—'}</td>
-                <td class="py-2 px-2 text-gray-400">{d.date || '—'}</td>
+                <td class="py-2 px-2 text-gray-400">{d.created_at ? new Date(d.created_at).toLocaleDateString('ru-RU', { day: '2-digit', month: '2-digit', year: 'numeric' }) : (d.date || '—')}</td>
                 <td class="py-2 px-2">
                   {d.url && <a href={d.url} target="_blank" class="text-amber-400 hover:text-amber-300">Moxfield ↗</a>}
                 </td>

@@ -93,13 +93,14 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       <div class="overflow-x-auto">
         <table class="w-full text-sm">
           <thead class="text-gray-400 border-b border-gray-800">
-            <tr><th class="text-left py-2 px-2">Дек</th><th class="text-left py-2 px-2">Автор</th><th class="text-left py-2 px-2">Ссылка</th></tr>
+            <tr><th class="text-left py-2 px-2">Дек</th><th class="text-left py-2 px-2">Автор</th><th class="text-left py-2 px-2">Дата</th><th class="text-left py-2 px-2">Ссылка</th></tr>
           </thead>
           <tbody>
             {decks.map((d: any) => (
               <tr class="border-b border-gray-800/50 hover:bg-gray-900">
                 <td class="py-2 px-2">{d.name || 'Без названия'}</td>
                 <td class="py-2 px-2 text-gray-400">{d.author || '—'}</td>
+                <td class="py-2 px-2 text-gray-400">{d.created_at ? new Date(d.created_at).toLocaleDateString('ru-RU', { day: '2-digit', month: '2-digit', year: 'numeric' }) : '—'}</td>
                 <td class="py-2 px-2">{d.url && <a href={d.url} target="_blank" class="text-amber-400 hover:text-amber-300">Moxfield ↗</a>}</td>
               </tr>
             ))}
