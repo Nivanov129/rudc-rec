@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import cardsList from '../data/cards.json';
 
 const top100 = (cardsList as any[]).slice(0, 100);
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 <Layout title="Топ карт формата">
   <h1 class="text-3xl font-bold text-amber-400 mb-6">Топ карт формата</h1>
@@ -19,7 +20,7 @@ const top100 = (cardsList as any[]).slice(0, 100);
 
   <div id="cards-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3">
     {top100.map((card: any, i: number) => (
-      <a href={`/cards/${card.slug}`} class="card-item rounded-lg overflow-hidden bg-gray-900 block hover:ring-2 hover:ring-amber-500 transition" data-type={card.type_line.toLowerCase()} data-card-preview={card.image_uri}>
+      <a href={`${base}/cards/${card.slug}`} class="card-item rounded-lg overflow-hidden bg-gray-900 block hover:ring-2 hover:ring-amber-500 transition" data-type={card.type_line.toLowerCase()} data-card-preview={card.image_uri}>
         <div class="relative">
           {card.image_uri && <img src={card.image_uri} alt={card.name} class="w-full" loading="lazy" onerror="this.style.display='none'" />}
           <div class="absolute top-1 left-1 bg-black/70 text-amber-400 text-xs font-bold px-2 py-0.5 rounded">#{i + 1}</div>

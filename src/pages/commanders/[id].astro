@@ -23,6 +23,7 @@ const categories = [
   { key: 'planeswalkers', label: 'Planeswalkers' },
   { key: 'lands', label: 'Земли' },
 ];
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 <Layout title={commander.name}>
   <div class="flex flex-col md:flex-row gap-8 mb-10">
@@ -104,14 +105,14 @@ const categories = [
     <div class="mb-8">
       <div class="bg-gray-900 border border-amber-600/30 rounded-lg p-4 mb-4">
         <span class="text-amber-400 font-medium">🤝 Этот коммандер играется с партнёром</span>
-        <a href={`/partners/${commander.id}`} class="ml-2 text-amber-400 hover:text-amber-300 underline text-sm">Все партнёры →</a>
+        <a href={`${base}/partners/${commander.id}`} class="ml-2 text-amber-400 hover:text-amber-300 underline text-sm">Все партнёры →</a>
       </div>
       <h2 class="text-2xl font-bold text-amber-400 mb-4">Популярные партнёры</h2>
       <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
         {commander.partners.slice(0, 10).map((p: any) => {
           const pairId = [commander.id, p.id].sort().join('--');
           return (
-            <a href={`/commanders/${pairId}`} class="bg-gray-900 rounded-lg overflow-hidden hover:ring-2 hover:ring-amber-500 transition block">
+            <a href={`${base}/commanders/${pairId}`} class="bg-gray-900 rounded-lg overflow-hidden hover:ring-2 hover:ring-amber-500 transition block">
               {p.image_uri && <img src={p.image_uri} alt={p.name} class="w-full" loading="lazy" />}
               <div class="p-2">
                 <div class="text-xs font-medium truncate">{p.name}</div>

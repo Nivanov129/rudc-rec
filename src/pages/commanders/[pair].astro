@@ -24,6 +24,7 @@ const categories = [
   { key: 'planeswalkers', label: 'Planeswalkers' },
   { key: 'lands', label: 'Земли' },
 ];
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 <Layout title={`${commander1.name} + ${commander2.name}`}>
   <div class="flex flex-col md:flex-row gap-8 mb-10">
@@ -33,9 +34,9 @@ const categories = [
     </div>
     <div>
       <h1 class="text-2xl md:text-3xl font-bold text-amber-400 mb-2">
-        <a href={`/commanders/${commander1.id}`} class="hover:text-amber-300">{commander1.name}</a>
+        <a href={`${base}/commanders/${commander1.id}`} class="hover:text-amber-300">{commander1.name}</a>
         <span class="text-gray-500"> + </span>
-        <a href={`/commanders/${commander2.id}`} class="hover:text-amber-300">{commander2.name}</a>
+        <a href={`${base}/commanders/${commander2.id}`} class="hover:text-amber-300">{commander2.name}</a>
       </h1>
       <p class="text-gray-400 mb-4">{data.pair_type === 'background' ? 'Коммандер + Бэкграунд' : 'Партнёры'}</p>
       <div class="flex items-center gap-4 mb-4">

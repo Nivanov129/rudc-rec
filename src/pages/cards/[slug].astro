@@ -14,6 +14,7 @@ export function getStaticPaths() {
 const { slug } = Astro.params;
 const dataPath = path.join(process.cwd(), 'src', 'data', 'cards', `${slug}.json`);
 const data = JSON.parse(fs.readFileSync(dataPath, 'utf-8'));
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 <Layout title={data.name}>
   <div class="flex flex-col md:flex-row gap-8 mb-10">
@@ -57,7 +58,7 @@ const data = JSON.parse(fs.readFileSync(dataPath, 'utf-8'));
             {data.commanders.map((c: any) => (
               <tr class="border-b border-gray-800/50 hover:bg-gray-900">
                 <td class="py-2 px-2">
-                  <a href={`/commanders/${c.id}`} class="flex items-center gap-2 hover:text-amber-400">
+                  <a href={`${base}/commanders/${c.id}`} class="flex items-center gap-2 hover:text-amber-400">
                     {c.image_uri && <img src={c.image_uri} alt={c.name} class="w-8 h-8 rounded object-cover" loading="lazy" />}
                     <span>{c.name}</span>
                   </a>

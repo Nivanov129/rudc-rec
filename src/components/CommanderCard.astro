@@ -11,8 +11,9 @@ interface Props {
 const { id, name, image_uri, deck_count, color_identity, is_banned } = Astro.props;
 const placeholder = 'https://cards.scryfall.io/normal/front/0/0/0000000.jpg';
 const img = image_uri || placeholder;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
-<a href={`/commanders/${id}`} class="block relative card-hover rounded-lg overflow-hidden bg-gray-900">
+<a href={`${base}/commanders/${id}`} class="block relative card-hover rounded-lg overflow-hidden bg-gray-900">
   {is_banned && <span class="absolute top-1 right-1 z-10 text-lg" title="Забанен">🚫</span>}
   <img src={img} alt={name} class="w-full rounded-t-lg" loading="lazy"
     onerror="this.style.display='none'" />

@@ -17,6 +17,7 @@ const periods = [
   { key: '90d', label: '90 дней', field: 'deck_count_90d' },
   { key: '30d', label: '30 дней', field: 'deck_count_30d' },
 ];
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 <Layout title="Все коммандеры">
   <h1 class="text-3xl font-bold text-amber-400 mb-6">Все коммандеры ({commanders.length})</h1>
@@ -64,7 +65,7 @@ const periods = [
         data-decks-90d={c.deck_count_90d || 0}
         data-decks-30d={c.deck_count_30d || 0}
       >
-        <a href={`/commanders/${c.id}`} class="block relative card-hover rounded-lg overflow-hidden bg-gray-900">
+        <a href={`${base}/commanders/${c.id}`} class="block relative card-hover rounded-lg overflow-hidden bg-gray-900">
           {c.is_banned && <span class="absolute top-1 right-1 z-10 text-lg" title="Забанен">🚫</span>}
           <img src={c.image_uri} alt={c.name} class="w-full rounded-t-lg" loading="lazy"
             onerror="this.style.display='none'" />

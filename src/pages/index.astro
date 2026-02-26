@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import CommanderCard from '../components/CommanderCard.astro';
 import meta from '../data/meta.json';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 <Layout title="Главная">
   <div class="text-center mb-12">
@@ -39,7 +40,7 @@ import meta from '../data/meta.json';
   </div>
 
   <div class="text-center">
-    <a href="/commanders" class="inline-block bg-amber-600 hover:bg-amber-500 text-white font-bold py-2 px-6 rounded-lg transition">
+    <a href={`${base}/commanders`} class="inline-block bg-amber-600 hover:bg-amber-500 text-white font-bold py-2 px-6 rounded-lg transition">
       Все коммандеры →
     </a>
   </div>
