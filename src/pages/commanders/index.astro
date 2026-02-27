@@ -1,7 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import ColorIcons from '../../components/ColorIcons.astro';
-import commanders from '../../data/commanders.json';
+import commanders from '../../data/commanders_display.json';
 
 const sorted = [...commanders].sort((a: any, b: any) => b.deck_count - a.deck_count);
 const colorButtons = [
@@ -64,13 +64,30 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         data-decks-180d={c.deck_count_180d || 0}
         data-decks-90d={c.deck_count_90d || 0}
         data-decks-30d={c.deck_count_30d || 0}
+        data-is-pair={c.is_pair ? 'true' : 'false'}
       >
         <a href={`${base}/commanders/${c.id}`} class="block relative card-hover rounded-lg overflow-hidden bg-gray-900">
           {c.is_banned && <span class="absolute top-1 right-1 z-10 text-lg" title="Забанен">🚫</span>}
-          <img src={c.image_uri} alt={c.name} class="w-full rounded-t-lg" loading="lazy"
-            onerror="this.style.display='none'" />
+          {c.is_pair ? (
+            <div class="flex">
+              <img src={c.image_uri} alt={c.commander1_name} class="w-1/2 rounded-tl-lg" loading="lazy"
+                onerror="this.style.display='none'" />
+              <img src={c.image_uri_2} alt={c.commander2_name} class="w-1/2 rounded-tr-lg" loading="lazy"
+                onerror="this.style.display='none'" />
+            </div>
+          ) : (
+            <img src={c.image_uri} alt={c.name} class="w-full rounded-t-lg" loading="lazy"
+              onerror="this.style.display='none'" />
+          )}
           <div class="p-2">
-            <div class="text-sm font-medium text-gray-100 truncate">{c.name}</div>
+            {c.is_pair ? (
+              <div>
+                <div class="text-xs font-medium text-gray-100 truncate">{c.commander1_name}</div>
+                <div class="text-xs font-medium text-amber-400 truncate">+ {c.commander2_name}</div>
+              </div>
+            ) : (
+              <div class="text-sm font-medium text-gray-100 truncate">{c.name}</div>
+            )}
             <div class="flex items-center justify-between mt-1">
               <ColorIcons colors={c.color_identity} />
               <span class="deck-count text-xs text-gray-400">{c.deck_count} деклистов</span>
@@ -84,13 +101,6 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   <script>
     let currentPeriod = 'all';
     const filters = new Set<string>();
-
-    function getDeckField(period: string): string {
-      if (period === '30d') return 'decks30d';
-      if (period === '90d') return 'decks90d';
-      if (period === '180d') return 'decks180d';
-      return 'decks';
-    }
 
     function getDecks(el: HTMLElement, period: string): number {
       if (period === '30d') return Number(el.getAttribute('data-decks-30d')) || 0;
@@ -109,7 +119,6 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
         el.style.display = (colorMatch && periodMatch) ? '' : 'none';
 
-        // Update deck count label
         const label = el.querySelector('.deck-count') as HTMLElement;
         if (label) {
           const suffix = deckCount === 1 ? 'деклист' : (deckCount >= 2 && deckCount <= 4) ? 'деклиста' : 'деклистов';
@@ -125,7 +134,6 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       items.forEach(item => grid.appendChild(item));
     }
 
-    // Period buttons
     document.querySelectorAll('.period-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         currentPeriod = (btn as HTMLElement).dataset.period!;
@@ -138,7 +146,6 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       });
     });
 
-    // Color filters
     document.querySelectorAll('.color-filter').forEach(btn => {
       btn.addEventListener('click', () => {
         const c = (btn as HTMLElement).dataset.color!;
@@ -159,7 +166,6 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       updateDisplay();
     });
 
-    // Sort buttons
     document.getElementById('sort-pop')?.addEventListener('click', () => {
       sortByPopularity();
       document.getElementById('sort-pop')!.className = 'text-xs bg-amber-600 text-white px-3 py-1 rounded';

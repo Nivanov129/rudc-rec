@@ -211,6 +211,7 @@ def main():
         card = commander_card_info.get(cmdr_name, {})
         scryfall_id = card.get("scryfall_id", "")
         deck_count = len(decks)
+        deck_count_180d = sum(1 for d in decks if d["_created_dt"] and d["_created_dt"] >= D180)
         deck_count_90d = sum(1 for d in decks if d["_created_dt"] and d["_created_dt"] >= D90)
         deck_count_30d = sum(1 for d in decks if d["_created_dt"] and d["_created_dt"] >= D30)
 
@@ -247,6 +248,7 @@ def main():
             "mana_cost": card.get("mana_cost", ""),
             "cmc": card.get("cmc", 0),
             "deck_count": deck_count,
+            "deck_count_180d": deck_count_180d,
             "deck_count_90d": deck_count_90d,
             "deck_count_30d": deck_count_30d,
             "is_banned": is_banned_cmdr or is_banned_deck,
@@ -258,6 +260,62 @@ def main():
         cmdr_by_id[slugify(cmdr_name)] = cmdr_data
 
     commanders_list.sort(key=lambda x: -x["deck_count"])
+
+    # Build display list: replace individual partners with pairs
+    partner_ids = {slugify(cn) for cn in commander_partners}
+    display_list = []
+
+    # Add non-partner commanders
+    for cmdr in commanders_list:
+        if cmdr["id"] not in partner_ids:
+            display_list.append(cmdr)
+
+    # Add pairs as display entries
+    for pair_key, (n1, n2) in pair_names.items():
+        n_decks = len(pair_decks[pair_key])
+        if n_decks == 0:
+            continue
+        card1 = commander_card_info.get(n1, {})
+        card2 = commander_card_info.get(n2, {})
+        colors = sorted(set(card1.get("color_identity", []) + card2.get("color_identity", [])))
+
+        # Temporal stats for pair
+        pair_deck_list = pair_decks[pair_key]
+        deck_count_180d = sum(1 for d in pair_deck_list if d["_created_dt"] and d["_created_dt"] >= D180)
+        deck_count_90d = sum(1 for d in pair_deck_list if d["_created_dt"] and d["_created_dt"] >= D90)
+        deck_count_30d = sum(1 for d in pair_deck_list if d["_created_dt"] and d["_created_dt"] >= D30)
+
+        sid1 = card1.get("scryfall_id", "")
+        sid2 = card2.get("scryfall_id", "")
+
+        pair_entry = {
+            "id": pair_key,
+            "name": f"{n1} + {n2}",
+            "scryfall_id": sid1,
+            "image_uri": scryfall_image(sid1),
+            "image_uri_2": scryfall_image(sid2),
+            "color_identity": colors,
+            "type_line": "Partner Pair",
+            "mana_cost": "",
+            "cmc": 0,
+            "deck_count": n_decks,
+            "deck_count_180d": deck_count_180d,
+            "deck_count_90d": deck_count_90d,
+            "deck_count_30d": deck_count_30d,
+            "is_banned": False,
+            "banned_type": None,
+            "has_partners": False,
+            "partners": [],
+            "is_pair": True,
+            "commander1_id": slugify(n1),
+            "commander2_id": slugify(n2),
+            "commander1_name": n1,
+            "commander2_name": n2,
+        }
+        display_list.append(pair_entry)
+
+    display_list.sort(key=lambda x: -x["deck_count"])
+    print(f"Display list: {len(display_list)} entries ({len([d for d in display_list if d.get('is_pair')])} pairs, {len([d for d in display_list if not d.get('is_pair')])} solo)")
 
     # Build commander detail files
     COMMANDERS_DIR.mkdir(parents=True, exist_ok=True)
@@ -464,6 +522,10 @@ def main():
     with open(OUT_DIR / "commanders.json", "w") as f:
         json.dump(commanders_list, f, ensure_ascii=False)
     print(f"✅ commanders.json: {len(commanders_list)} commanders")
+
+    with open(OUT_DIR / "commanders_display.json", "w") as f:
+        json.dump(display_list, f, ensure_ascii=False)
+    print(f"✅ commanders_display.json: {len(display_list)} entries")
 
     with open(OUT_DIR / "cards.json", "w") as f:
         json.dump(cards_list, f, ensure_ascii=False)

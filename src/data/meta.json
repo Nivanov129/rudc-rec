@@ -4,7 +4,7 @@
   "total_unique_cards": 8017,
   "total_pairs": 40,
   "total_card_pages": 3831,
-  "last_updated": "2026-02-26",
+  "last_updated": "2026-02-27",
   "color_distribution": {
     "G": 552,
     "R": 718,
@@ -27,13 +27,13 @@
       "mana_cost": "",
       "cmc": 5.0,
       "deck_count": 11,
+      "deck_count_180d": 9,
       "deck_count_90d": 5,
       "deck_count_30d": 2,
       "is_banned": false,
       "banned_type": null,
       "has_partners": false,
-      "partners": [],
-      "deck_count_180d": 9
+      "partners": []
     },
     {
       "id": "omnath-locus-of-creation",
@@ -50,13 +50,13 @@
       "mana_cost": "{R}{G}{W}{U}",
       "cmc": 4.0,
       "deck_count": 39,
+      "deck_count_180d": 8,
       "deck_count_90d": 3,
       "deck_count_30d": 0,
       "is_banned": false,
       "banned_type": null,
       "has_partners": false,
-      "partners": [],
-      "deck_count_180d": 8
+      "partners": []
     },
     {
       "id": "feldon-ronom-excavator",
@@ -70,13 +70,13 @@
       "mana_cost": "{1}{R}",
       "cmc": 2.0,
       "deck_count": 23,
+      "deck_count_180d": 7,
       "deck_count_90d": 1,
       "deck_count_30d": 1,
       "is_banned": false,
       "banned_type": null,
       "has_partners": false,
-      "partners": [],
-      "deck_count_180d": 7
+      "partners": []
     },
     {
       "id": "jackal-genius-geneticist",
@@ -91,13 +91,13 @@
       "mana_cost": "{G}{U}",
       "cmc": 2.0,
       "deck_count": 7,
+      "deck_count_180d": 7,
       "deck_count_90d": 1,
       "deck_count_30d": 0,
       "is_banned": false,
       "banned_type": null,
       "has_partners": false,
-      "partners": [],
-      "deck_count_180d": 7
+      "partners": []
     },
     {
       "id": "lady-octopus-inspired-inventor",
@@ -111,13 +111,13 @@
       "mana_cost": "{U}",
       "cmc": 1.0,
       "deck_count": 7,
+      "deck_count_180d": 6,
       "deck_count_90d": 0,
       "deck_count_30d": 0,
       "is_banned": false,
       "banned_type": null,
       "has_partners": false,
-      "partners": [],
-      "deck_count_180d": 6
+      "partners": []
     },
     {
       "id": "phelia-exuberant-shepherd",
@@ -131,13 +131,13 @@
       "mana_cost": "{1}{W}",
       "cmc": 2.0,
       "deck_count": 10,
+      "deck_count_180d": 5,
       "deck_count_90d": 4,
       "deck_count_30d": 1,
       "is_banned": false,
       "banned_type": null,
       "has_partners": false,
-      "partners": [],
-      "deck_count_180d": 5
+      "partners": []
     },
     {
       "id": "gran-gran",
@@ -151,13 +151,13 @@
       "mana_cost": "{U}",
       "cmc": 1.0,
       "deck_count": 5,
+      "deck_count_180d": 5,
       "deck_count_90d": 5,
       "deck_count_30d": 1,
       "is_banned": false,
       "banned_type": null,
       "has_partners": false,
-      "partners": [],
-      "deck_count_180d": 5
+      "partners": []
     },
     {
       "id": "yoshimaru-ever-faithful",
@@ -171,6 +171,7 @@
       "mana_cost": "{W}",
       "cmc": 1.0,
       "deck_count": 22,
+      "deck_count_180d": 4,
       "deck_count_90d": 2,
       "deck_count_30d": 2,
       "is_banned": false,
@@ -231,22 +232,33 @@
           ]
         },
         {
+          "name": "Vial Smasher the Fierce",
+          "id": "vial-smasher-the-fierce",
+          "image_uri": "https://cards.scryfall.io/normal/front/c/c/cc7be939-2202-40fe-8899-a05682d76190.jpg",
+          "deck_count": 1,
+          "color_identity": [
+            "B",
+            "R",
+            "W"
+          ]
+        },
+        {
+          "name": "Bruse Tarl, Boorish Herder",
+          "id": "bruse-tarl-boorish-herder",
+          "image_uri": "https://cards.scryfall.io/normal/front/1/2/125b552b-45ea-4e0b-94a9-8131c97a04c0.jpg",
+          "deck_count": 1,
+          "color_identity": [
+            "R",
+            "W"
+          ]
+        },
+        {
           "name": "Thrasios, Triton Hero",
           "id": "thrasios-triton-hero",
           "image_uri": "https://cards.scryfall.io/normal/front/2/1/21e27b91-c7f1-4709-aa0d-8b5d81b22a0a.jpg",
           "deck_count": 1,
           "color_identity": [
             "G",
-            "U",
-            "W"
-          ]
-        },
-        {
-          "name": "Malcolm, Keen-Eyed Navigator",
-          "id": "malcolm-keen-eyed-navigator",
-          "image_uri": "https://cards.scryfall.io/normal/front/5/1/51187cdb-85ee-4f68-9e29-d84d296f0825.jpg",
-          "deck_count": 1,
-          "color_identity": [
             "U",
             "W"
           ]
@@ -263,28 +275,16 @@
           ]
         },
         {
-          "name": "Bruse Tarl, Boorish Herder",
-          "id": "bruse-tarl-boorish-herder",
-          "image_uri": "https://cards.scryfall.io/normal/front/1/2/125b552b-45ea-4e0b-94a9-8131c97a04c0.jpg",
+          "name": "Malcolm, Keen-Eyed Navigator",
+          "id": "malcolm-keen-eyed-navigator",
+          "image_uri": "https://cards.scryfall.io/normal/front/5/1/51187cdb-85ee-4f68-9e29-d84d296f0825.jpg",
           "deck_count": 1,
           "color_identity": [
-            "R",
-            "W"
-          ]
-        },
-        {
-          "name": "Vial Smasher the Fierce",
-          "id": "vial-smasher-the-fierce",
-          "image_uri": "https://cards.scryfall.io/normal/front/c/c/cc7be939-2202-40fe-8899-a05682d76190.jpg",
-          "deck_count": 1,
-          "color_identity": [
-            "B",
-            "R",
+            "U",
             "W"
           ]
         }
-      ],
-      "deck_count_180d": 4
+      ]
     },
     {
       "id": "elminster",
@@ -299,13 +299,13 @@
       "mana_cost": "{3}{W}{U}",
       "cmc": 5.0,
       "deck_count": 12,
+      "deck_count_180d": 4,
       "deck_count_90d": 1,
       "deck_count_30d": 1,
       "is_banned": false,
       "banned_type": null,
       "has_partners": false,
-      "partners": [],
-      "deck_count_180d": 4
+      "partners": []
     },
     {
       "id": "leovold-emissary-of-trest",
@@ -321,13 +321,13 @@
       "mana_cost": "{B}{G}{U}",
       "cmc": 3.0,
       "deck_count": 11,
+      "deck_count_180d": 4,
       "deck_count_90d": 3,
       "deck_count_30d": 2,
       "is_banned": false,
       "banned_type": null,
       "has_partners": false,
-      "partners": [],
-      "deck_count_180d": 4
+      "partners": []
     },
     {
       "id": "shorikai-genesis-engine",
@@ -342,13 +342,13 @@
       "mana_cost": "{2}{W}{U}",
       "cmc": 4.0,
       "deck_count": 39,
+      "deck_count_180d": 3,
       "deck_count_90d": 2,
       "deck_count_30d": 1,
       "is_banned": false,
       "banned_type": null,
       "has_partners": false,
-      "partners": [],
-      "deck_count_180d": 3
+      "partners": []
     },
     {
       "id": "asmoranomardicadaistinaculdacar",
@@ -363,13 +363,13 @@
       "mana_cost": "",
       "cmc": 0,
       "deck_count": 38,
+      "deck_count_180d": 3,
       "deck_count_90d": 2,
       "deck_count_30d": 0,
       "is_banned": false,
       "banned_type": null,
       "has_partners": false,
-      "partners": [],
-      "deck_count_180d": 3
+      "partners": []
     },
     {
       "id": "slimefoot-and-squee",
@@ -385,13 +385,13 @@
       "mana_cost": "{B}{R}{G}",
       "cmc": 3.0,
       "deck_count": 17,
+      "deck_count_180d": 3,
       "deck_count_90d": 2,
       "deck_count_30d": 1,
       "is_banned": false,
       "banned_type": null,
       "has_partners": false,
-      "partners": [],
-      "deck_count_180d": 3
+      "partners": []
     },
     {
       "id": "tymna-the-weaver",
@@ -406,6 +406,7 @@
       "mana_cost": "{1}{W}{B}",
       "cmc": 3.0,
       "deck_count": 15,
+      "deck_count_180d": 3,
       "deck_count_90d": 2,
       "deck_count_30d": 1,
       "is_banned": false,
@@ -459,8 +460,7 @@
             "W"
           ]
         }
-      ],
-      "deck_count_180d": 3
+      ]
     },
     {
       "id": "vivi-ornitier",
@@ -475,13 +475,13 @@
       "mana_cost": "{1}{U}{R}",
       "cmc": 3.0,
       "deck_count": 11,
+      "deck_count_180d": 3,
       "deck_count_90d": 1,
       "deck_count_30d": 0,
       "is_banned": false,
       "banned_type": null,
       "has_partners": false,
-      "partners": [],
-      "deck_count_180d": 3
+      "partners": []
     },
     {
       "id": "rograkh-son-of-rohgahh",
@@ -495,6 +495,7 @@
       "mana_cost": "{0}",
       "cmc": 0,
       "deck_count": 11,
+      "deck_count_180d": 3,
       "deck_count_90d": 2,
       "deck_count_30d": 1,
       "is_banned": false,
@@ -513,6 +514,16 @@
           ]
         },
         {
+          "name": "Tevesh Szat, Doom of Fools",
+          "id": "tevesh-szat-doom-of-fools",
+          "image_uri": "https://cards.scryfall.io/normal/front/8/f/8f244716-78ab-46f5-b6e9-fc1e6db28052.jpg",
+          "deck_count": 2,
+          "color_identity": [
+            "B",
+            "R"
+          ]
+        },
+        {
           "name": "Silas Renn, Seeker Adept",
           "id": "silas-renn-seeker-adept",
           "image_uri": "https://cards.scryfall.io/normal/front/4/e/4e3fe912-1374-47c7-b73f-89ef55c479c1.jpg",
@@ -521,16 +532,6 @@
             "B",
             "R",
             "U"
-          ]
-        },
-        {
-          "name": "Tevesh Szat, Doom of Fools",
-          "id": "tevesh-szat-doom-of-fools",
-          "image_uri": "https://cards.scryfall.io/normal/front/8/f/8f244716-78ab-46f5-b6e9-fc1e6db28052.jpg",
-          "deck_count": 2,
-          "color_identity": [
-            "B",
-            "R"
           ]
         },
         {
@@ -544,8 +545,7 @@
             "R"
           ]
         }
-      ],
-      "deck_count_180d": 3
+      ]
     },
     {
       "id": "ludevic-necro-alchemist",
@@ -560,6 +560,7 @@
       "mana_cost": "{1}{U}{R}",
       "cmc": 3.0,
       "deck_count": 10,
+      "deck_count_180d": 3,
       "deck_count_90d": 1,
       "deck_count_30d": 1,
       "is_banned": false,
@@ -589,28 +590,7 @@
             "W"
           ]
         }
-      ],
-      "deck_count_180d": 3
-    },
-    {
-      "id": "tifa-lockhart",
-      "name": "Tifa Lockhart",
-      "scryfall_id": "fb781323-2746-405d-a9b2-e778c037a6e9",
-      "image_uri": "https://cards.scryfall.io/normal/front/f/b/fb781323-2746-405d-a9b2-e778c037a6e9.jpg",
-      "color_identity": [
-        "G"
-      ],
-      "type_line": "Legendary Creature — Human Monk",
-      "mana_cost": "{1}{G}",
-      "cmc": 2.0,
-      "deck_count": 8,
-      "deck_count_90d": 0,
-      "deck_count_30d": 0,
-      "is_banned": false,
-      "banned_type": null,
-      "has_partners": false,
-      "partners": [],
-      "deck_count_180d": 3
+      ]
     },
     {
       "id": "glarb-calamitys-augur",
@@ -626,13 +606,13 @@
       "mana_cost": "{B}{G}{U}",
       "cmc": 3.0,
       "deck_count": 6,
+      "deck_count_180d": 3,
       "deck_count_90d": 0,
       "deck_count_30d": 0,
       "is_banned": false,
       "banned_type": null,
       "has_partners": false,
-      "partners": [],
-      "deck_count_180d": 3
+      "partners": []
     },
     {
       "id": "deadpool-trading-card",
@@ -647,13 +627,33 @@
       "mana_cost": "{2}{B}{R}",
       "cmc": 4.0,
       "deck_count": 5,
+      "deck_count_180d": 3,
       "deck_count_90d": 1,
       "deck_count_30d": 0,
       "is_banned": false,
       "banned_type": null,
       "has_partners": false,
-      "partners": [],
-      "deck_count_180d": 3
+      "partners": []
+    },
+    {
+      "id": "cloud-midgar-mercenary",
+      "name": "Cloud, Midgar Mercenary",
+      "scryfall_id": "5d8690ec-fded-4801-8eaf-5e5fe3d444ec",
+      "image_uri": "https://cards.scryfall.io/normal/front/5/d/5d8690ec-fded-4801-8eaf-5e5fe3d444ec.jpg",
+      "color_identity": [
+        "W"
+      ],
+      "type_line": "Legendary Creature — Human Soldier Mercenary",
+      "mana_cost": "{W}{W}",
+      "cmc": 2.0,
+      "deck_count": 4,
+      "deck_count_180d": 3,
+      "deck_count_90d": 1,
+      "deck_count_30d": 0,
+      "is_banned": false,
+      "banned_type": null,
+      "has_partners": false,
+      "partners": []
     }
   ]
 }
